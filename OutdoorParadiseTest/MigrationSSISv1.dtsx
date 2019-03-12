@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-GT7JTJI"
   DTS:CreatorName="DESKTOP-GT7JTJI\jurian"
-  DTS:DTSID="{063E671A-B09E-469A-9A39-5645BB994989}"
+  DTS:DTSID="{BA9CDE92-E701-4D79-BBC9-81CFC639CA5F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="MigrationSSISv1"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{326BACAD-783D-4802-BF2A-304246D3E238}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{1A0AC07C-151C-45E6-B97F-901DD80EDCC9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
