@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{23499B75-020D-4364-8745-23C7F83305CD}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{852496C3-5DCB-4AF9-891E-FD6B65A8233C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -94,6 +94,36 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=Daddy;Initial Catalog=OutdoorParadise;Integrated Security=True;Application Name=SSIS-Package-{284EE4D5-FB5A-48EB-91F9-003F0794A493}Daddy.OutdoorParadise 2;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Daddy.OutdoorParadise 3]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{EE609715-CD3D-4F37-A047-76E714C3F63E}"
+      DTS:ObjectName="Daddy.OutdoorParadise 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=Daddy;Initial Catalog=OutdoorParadise;Integrated Security=True;Application Name=SSIS-Package-{EE609715-CD3D-4F37-A047-76E714C3F63E}Daddy.OutdoorParadise 3;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Daddy.OutdoorParadise 4]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{FD441FEE-7C97-4D3D-A929-56F69AB9C94E}"
+      DTS:ObjectName="Daddy.OutdoorParadise 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=Daddy;Initial Catalog=OutdoorParadise;Integrated Security=True;Application Name=SSIS-Package-{FD441FEE-7C97-4D3D-A929-56F69AB9C94E}Daddy.OutdoorParadise 4;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Daddy.OutdoorParadise 5]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{16DC52BD-31F4-45F5-8C67-26B91486708F}"
+      DTS:ObjectName="Daddy.OutdoorParadise 5">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=Daddy;Initial Catalog=OutdoorParadise;Integrated Security=True;Application Name=SSIS-Package-{16DC52BD-31F4-45F5-8C67-26B91486708F}Daddy.OutdoorParadise 5;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -1693,6 +1723,344 @@
               </outputs>
             </component>
             <component
+              refId="Package\Data Flow Task\Op Employee"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Op Employee"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Employee"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Op Employee.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Daddy.OutdoorParadise 5]"
+                  connectionManagerRefId="Package.ConnectionManagers[Daddy.OutdoorParadise 5]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[emp_id]"
+                      cachedDataType="i4"
+                      cachedName="emp_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[emp_id]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[emp_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[manager_id]"
+                      cachedDataType="i4"
+                      cachedName="manager_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[manager_id]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[manager_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[emp_fname]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="emp_fname"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[emp_fname]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[emp_fname]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[emp_lname]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="emp_lname"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[emp_lname]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[emp_lname]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[dept_id]"
+                      cachedDataType="i4"
+                      cachedName="dept_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[dept_id]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[dept_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[street]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="street"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[street]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[street]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[city]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[state]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="state"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[state]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[phone]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="phone"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[phone]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[phone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[ss_number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ss_number"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[ss_number]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[ss_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[job_id]"
+                      cachedDataType="i4"
+                      cachedName="job_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[job_id]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[job_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[start_date]"
+                      cachedDataType="date"
+                      cachedName="start_date"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[start_date]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[start_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[termination_date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="termination_date"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[termination_date]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[termination_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[birth_date]"
+                      cachedDataType="date"
+                      cachedName="birth_date"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[birth_date]"
+                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[birth_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[status]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[ZipCode]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="ZipCode"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[zip_code]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ZipCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[BeneDayCare]"
+                      cachedDataType="bool"
+                      cachedName="BeneDayCare"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[bene_day_care]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[BeneDayCare]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[BeneBeneLife]"
+                      cachedDataType="bool"
+                      cachedName="BeneBeneLife"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[bene_life_ins]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[BeneBeneLife]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].Columns[BeneHealth]"
+                      cachedDataType="bool"
+                      cachedName="BeneHealth"
+                      externalMetadataColumnId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[bene_health_ins]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[BeneHealth]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[emp_id]"
+                      dataType="i4"
+                      name="emp_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[manager_id]"
+                      dataType="i4"
+                      name="manager_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[emp_fname]"
+                      dataType="wstr"
+                      length="255"
+                      name="emp_fname" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[emp_lname]"
+                      dataType="wstr"
+                      length="255"
+                      name="emp_lname" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[dept_id]"
+                      dataType="i4"
+                      name="dept_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[street]"
+                      dataType="wstr"
+                      length="255"
+                      name="street" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[city]"
+                      dataType="wstr"
+                      length="255"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[state]"
+                      dataType="wstr"
+                      length="255"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[zip_code]"
+                      dataType="wstr"
+                      length="30"
+                      name="zip_code" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[job_id]"
+                      dataType="i4"
+                      name="job_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[phone]"
+                      dataType="wstr"
+                      length="255"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="1"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[ss_number]"
+                      dataType="wstr"
+                      length="255"
+                      name="ss_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[salary]"
+                      dataType="r4"
+                      name="salary" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[start_date]"
+                      dataType="dbTimeStamp"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[termination_date]"
+                      dataType="dbTimeStamp"
+                      name="termination_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[birth_date]"
+                      dataType="dbTimeStamp"
+                      name="birth_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[bene_health_ins]"
+                      dataType="bool"
+                      name="bene_health_ins" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[bene_life_ins]"
+                      dataType="bool"
+                      name="bene_life_ins" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[bene_day_care]"
+                      dataType="bool"
+                      name="bene_day_care" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[is_sales_staff]"
+                      dataType="bool"
+                      name="is_sales_staff" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[work_phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="work_phone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[extension]"
+                      dataType="wstr"
+                      length="6"
+                      name="extension" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[fax]"
+                      dataType="wstr"
+                      length="20"
+                      name="fax" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[CV]"
+                      dataType="bytes"
+                      length="1"
+                      name="CV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input].ExternalColumns[branch_code]"
+                      dataType="i4"
+                      name="branch_code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Op Employee.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Op Employee.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Op Employee.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Op Employee.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Op Employee.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Task\OP Employee2"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -1966,347 +2334,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Op Employees"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
-              name="Op Employees"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="The Destination database table name."
-                  expressionType="Notify"
-                  name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Employee"</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
-                  expressionType="Notify"
-                  name="BatchSize">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
-                  expressionType="Notify"
-                  name="CommandTimeout">30</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
-                  expressionType="Notify"
-                  name="UseBulkInsertWhenPossible">true</property>
-                <property
-                  dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Op Employees.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Daddy.OutdoorParadise 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[Daddy.OutdoorParadise 2]"
-                  description="Managed connection manager"
-                  name="IDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input]"
-                  errorRowDisposition="IgnoreFailure"
-                  hasSideEffects="true"
-                  name="ADO NET Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[emp_id]"
-                      cachedDataType="i4"
-                      cachedName="emp_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[emp_id]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[emp_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[manager_id]"
-                      cachedDataType="i4"
-                      cachedName="manager_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[manager_id]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[manager_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[emp_fname]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="emp_fname"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[emp_fname]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[emp_fname]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[emp_lname]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="emp_lname"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[emp_lname]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[emp_lname]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[dept_id]"
-                      cachedDataType="i4"
-                      cachedName="dept_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[dept_id]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[dept_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[street]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="street"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[street]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[street]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[city]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="city"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[city]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[city]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[state]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="state"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[state]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[state]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[zip_code]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="zip_code"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[zip_code]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[zip_code]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[phone]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="phone"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[phone]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[phone]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[ss_number]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="ss_number"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[ss_number]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[ss_number]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[job_id]"
-                      cachedDataType="i4"
-                      cachedName="job_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[job_id]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[job_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[start_date]"
-                      cachedDataType="date"
-                      cachedName="start_date"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[start_date]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[start_date]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[termination_date]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="termination_date"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[termination_date]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[termination_date]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[birth_date]"
-                      cachedDataType="date"
-                      cachedName="birth_date"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[birth_date]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[birth_date]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[bene_health_ins]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="bene_health_ins"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[bene_health_ins]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[bene_health_ins]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[bene_life_ins]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="bene_life_ins"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[bene_life_ins]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[bene_life_ins]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[bene_day_care]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="bene_day_care"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[bene_day_care]"
-                      lineageId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output].Columns[bene_day_care]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[Gender]"
-                      cachedDataType="wstr"
-                      cachedLength="1"
-                      cachedName="Gender"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[gender]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Gender]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].Columns[Status]"
-                      cachedDataType="wstr"
-                      cachedLength="1"
-                      cachedName="Status"
-                      externalMetadataColumnId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[status]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Status]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[emp_id]"
-                      dataType="i4"
-                      name="emp_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[manager_id]"
-                      dataType="i4"
-                      name="manager_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[emp_fname]"
-                      dataType="wstr"
-                      length="255"
-                      name="emp_fname" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[emp_lname]"
-                      dataType="wstr"
-                      length="255"
-                      name="emp_lname" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[dept_id]"
-                      dataType="i4"
-                      name="dept_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[street]"
-                      dataType="wstr"
-                      length="255"
-                      name="street" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[city]"
-                      dataType="wstr"
-                      length="255"
-                      name="city" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[state]"
-                      dataType="wstr"
-                      length="255"
-                      name="state" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[zip_code]"
-                      dataType="wstr"
-                      length="30"
-                      name="zip_code" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[job_id]"
-                      dataType="i4"
-                      name="job_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[phone]"
-                      dataType="wstr"
-                      length="255"
-                      name="phone" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[status]"
-                      dataType="wstr"
-                      length="1"
-                      name="status" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[ss_number]"
-                      dataType="wstr"
-                      length="255"
-                      name="ss_number" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[salary]"
-                      dataType="r4"
-                      name="salary" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[start_date]"
-                      dataType="dbTimeStamp"
-                      name="start_date" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[termination_date]"
-                      dataType="dbTimeStamp"
-                      name="termination_date" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[birth_date]"
-                      dataType="dbTimeStamp"
-                      name="birth_date" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[bene_health_ins]"
-                      dataType="bool"
-                      name="bene_health_ins" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[bene_life_ins]"
-                      dataType="bool"
-                      name="bene_life_ins" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[bene_day_care]"
-                      dataType="bool"
-                      name="bene_day_care" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[gender]"
-                      dataType="wstr"
-                      length="1"
-                      name="gender" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[is_sales_staff]"
-                      dataType="bool"
-                      name="is_sales_staff" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[work_phone]"
-                      dataType="wstr"
-                      length="20"
-                      name="work_phone" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[extension]"
-                      dataType="wstr"
-                      length="6"
-                      name="extension" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[fax]"
-                      dataType="wstr"
-                      length="20"
-                      name="fax" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[email]"
-                      dataType="wstr"
-                      length="50"
-                      name="email" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[CV]"
-                      dataType="bytes"
-                      length="1"
-                      name="CV" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input].ExternalColumns[branch_code]"
-                      dataType="i4"
-                      name="branch_code" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Op Employees.Outputs[ADO NET Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="ADO NET Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Op Employees.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Op Employees.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Op Employees.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Op Employees.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Data Flow Task\OP jobs"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -2454,7 +2481,7 @@
               startId="Package\Data Flow Task\laadt GO employees sqlserver.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output1]"
-              endId="Package\Data Flow Task\Op Employees.Inputs[ADO NET Destination Input]"
+              endId="Package\Data Flow Task\Op Employee.Inputs[ADO NET Destination Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
             <path
@@ -2526,10 +2553,6 @@
           Id="Package\Data Flow Task\Derived Column"
           TopLeft="391.094405594406,368.646853146853" />
         <NodeLayout
-          Size="146.666666666667,42.6666666666667"
-          Id="Package\Data Flow Task\Op Employees"
-          TopLeft="662.772727272727,415.22027972028" />
-        <NodeLayout
           Size="192,50.6666666666667"
           Id="Package\Data Flow Task\Acces Employees"
           TopLeft="98.5769230769231,406.269230769231" />
@@ -2540,7 +2563,7 @@
         <NodeLayout
           Size="213.333333333334,42"
           Id="Package\Data Flow Task\laadt excel employees"
-          TopLeft="359.807692307692,55.8846153846154" />
+          TopLeft="362.932692261126,54.8012820706536" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="287.615384615385,330.435897435898">
@@ -2581,60 +2604,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="103.397435897436,-54.4487179487179"
+              EndConnector="106.522435850869,-55.5320512626798"
               Start="0,0"
-              End="95.8974358974356,-54.4487179487179">
+              End="99.0224358508695,-55.5320512626798">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="47.6987179487178,0" />
+                    End="49.2612179254348,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="47.6987179487178,0"
-                    Point2="51.6987179487178,0"
-                    Point3="51.6987179487178,-4" />
+                    Point1="49.2612179254348,0"
+                    Point2="53.2612179254348,0"
+                    Point3="53.2612179254348,-4" />
                   <mssgle:LineSegment
-                    End="51.6987179487178,-50.4487179487179" />
+                    End="53.2612179254348,-51.5320512626798" />
                   <mssgle:CubicBezierSegment
-                    Point1="51.6987179487178,-50.4487179487179"
-                    Point2="51.6987179487178,-54.4487179487179"
-                    Point3="55.6987179487178,-54.4487179487179" />
+                    Point1="53.2612179254348,-51.5320512626798"
+                    Point2="53.2612179254348,-55.5320512626798"
+                    Point3="57.2612179254348,-55.5320512626798" />
                   <mssgle:LineSegment
-                    End="95.8974358974356,-54.4487179487179" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="545.094405594406,389.646853146853">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="117.678321678321,46.9067599067603"
-              Start="0,0"
-              End="110.178321678321,46.9067599067603">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="54.8391608391605,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="54.8391608391605,0"
-                    Point2="58.8391608391605,0"
-                    Point3="58.8391608391605,4" />
-                  <mssgle:LineSegment
-                    End="58.8391608391605,42.9067599067603" />
-                  <mssgle:CubicBezierSegment
-                    Point1="58.8391608391605,42.9067599067603"
-                    Point2="58.8391608391605,46.9067599067603"
-                    Point3="62.8391608391605,46.9067599067603" />
-                  <mssgle:LineSegment
-                    End="110.178321678321,46.9067599067603" />
+                    End="99.0224358508695,-55.5320512626798" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2745,6 +2734,44 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Op Employee"
+          TopLeft="659.374990174547,404.08332610776" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="545.094405594406,389.646853146853">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.280584580141,35.7698062942406"
+              Start="0,0"
+              End="106.780584580141,35.7698062942406">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="53.1402922900704,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.1402922900704,0"
+                    Point2="57.1402922900704,0"
+                    Point3="57.1402922900704,4" />
+                  <mssgle:LineSegment
+                    End="57.1402922900704,31.7698062942406" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.1402922900704,31.7698062942406"
+                    Point2="57.1402922900704,35.7698062942406"
+                    Point3="61.1402922900704,35.7698062942406" />
+                  <mssgle:LineSegment
+                    End="106.780584580141,35.7698062942406" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2786,14 +2813,6 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Op Employees">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Acces Employees">
     <Properties>
       <Property>
@@ -2816,6 +2835,14 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Op Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
