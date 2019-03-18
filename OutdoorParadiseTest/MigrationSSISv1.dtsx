@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MigrationSSISv1"
   DTS:PackageType="5"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{7FDEE168-EB8E-4BEC-A7E2-4F103B523662}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{45F90CCB-EC07-46EE-9BBF-51BF7AF37147}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1461,6 +1461,96 @@
               </outputs>
             </component>
             <component
+              refId="Package\Data Flow Task\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[REGION]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="REGION"
+                      lineageId="Package\Data Flow Task\Branch.Outputs[ADO NET Source Output].Columns[REGION]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[_region]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="_region"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Data Flow Task\Branch.Outputs[ADO NET Source Output].Columns[REGION]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(REGION)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[split]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="split"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Task\Data Conversion"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -1831,6 +1921,28 @@
                           name="FriendlyExpression">SUBSTRING(status,1,1)</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[is_sales_staff]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[is_sales_staff]"
+                      name="is_sales_staff"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression"> FALSE </property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression"> FALSE </property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1940,6 +2052,28 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">EXTENSION</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[is_sales_staff]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[is_sales_staff]"
+                      name="is_sales_staff"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression"> TRUE </property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression"> TRUE </property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2786,7 +2920,7 @@ Order By Company_name</property>
                       externalMetadataColumnId="Package\Data Flow Task\GO Retailer.Outputs[ADO NET Source Output].ExternalColumns[COMPANY_NAME]"
                       length="50"
                       lineageId="Package\Data Flow Task\GO Retailer.Outputs[ADO NET Source Output].Columns[COMPANY_NAME]"
-                      mappedColumnId="Package\Data Flow Task\1:invalid"
+                      mappedColumnId="Package\Data Flow Task\Order_header OP.Inputs[ADO NET Destination Input].ExternalColumns[retailer_contact_code]"
                       name="COMPANY_NAME"
                       sortKeyPosition="1"
                       truncationRowDisposition="FailComponent" />
@@ -3603,6 +3737,12 @@ Order By Company_name</property>
                       cachedName="bene_life"
                       externalMetadataColumnId="Package\Data Flow Task\OP Employee.Inputs[ADO NET Destination Input].ExternalColumns[bene_life_ins]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[bene_life]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OP Employee.Inputs[ADO NET Destination Input].Columns[is_sales_staff]"
+                      cachedDataType="bool"
+                      cachedName="is_sales_staff"
+                      externalMetadataColumnId="Package\Data Flow Task\OP Employee.Inputs[ADO NET Destination Input].ExternalColumns[is_sales_staff]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[is_sales_staff]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3975,12 +4115,6 @@ Order By Company_name</property>
                       externalMetadataColumnId="Package\Data Flow Task\Order_header OP.Inputs[ADO NET Destination Input].ExternalColumns[order_method_code]"
                       lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[ORDER_METHOD_CODE]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Order_header OP.Inputs[ADO NET Destination Input].Columns[RETAILER_CODE]"
-                      cachedDataType="i4"
-                      cachedName="RETAILER_CODE"
-                      externalMetadataColumnId="Package\Data Flow Task\Order_header OP.Inputs[ADO NET Destination Input].ExternalColumns[retailer_code]"
-                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[RETAILER_CODE]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Order_header OP.Inputs[ADO NET Destination Input].Columns[SALES_BRANCH_CODE]"
                       cachedDataType="i4"
                       cachedName="SALES_BRANCH_CODE"
@@ -3999,10 +4133,6 @@ Order By Company_name</property>
                       refId="Package\Data Flow Task\Order_header OP.Inputs[ADO NET Destination Input].ExternalColumns[order_number]"
                       dataType="i4"
                       name="order_number" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Order_header OP.Inputs[ADO NET Destination Input].ExternalColumns[retailer_code]"
-                      dataType="i4"
-                      name="retailer_code" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Order_header OP.Inputs[ADO NET Destination Input].ExternalColumns[retailer_site_code]"
                       dataType="i4"
@@ -5334,16 +5464,29 @@ Order By Company_name</property>
                           name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[bene_day_care]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[is_sales_staff]"
+                      cachedDataType="bool"
+                      cachedName="is_sales_staff"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[is_sales_staff]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[is_sales_staff]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4]"
                   hasSideEffects="true"
-                  name="Union All Input 3">
+                  name="Union All Input 4">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[EMAIL]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[EMAIL]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="EMAIL"
@@ -5357,7 +5500,21 @@ Order By Company_name</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[SALES_STAFF_CODE]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[_extension]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="_extension"
+                      lineageId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[_extension]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[_extension]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[SALES_STAFF_CODE]"
                       cachedDataType="i4"
                       cachedName="SALES_STAFF_CODE"
                       lineageId="Package\Data Flow Task\GreatOutdoor2 Employees.Outputs[ADO NET Source Output].Columns[SALES_STAFF_CODE]">
@@ -5370,7 +5527,7 @@ Order By Company_name</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[MANAGER_CODE]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[MANAGER_CODE]"
                       cachedDataType="i4"
                       cachedName="MANAGER_CODE"
                       lineageId="Package\Data Flow Task\GreatOutdoor2 Employees.Outputs[ADO NET Source Output].Columns[MANAGER_CODE]">
@@ -5383,7 +5540,7 @@ Order By Company_name</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[FIRST_NAME]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[FIRST_NAME]"
                       cachedDataType="wstr"
                       cachedLength="25"
                       cachedName="FIRST_NAME"
@@ -5397,7 +5554,7 @@ Order By Company_name</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[LAST_NAME]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[LAST_NAME]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="LAST_NAME"
@@ -5411,7 +5568,33 @@ Order By Company_name</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[_fax]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[_DateHired]"
+                      cachedDataType="date"
+                      cachedName="_DateHired"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[_DateHired]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[start_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[is_sales_staff]"
+                      cachedDataType="bool"
+                      cachedName="is_sales_staff"
+                      lineageId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[is_sales_staff]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[is_sales_staff]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[_fax]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="_fax"
@@ -5425,20 +5608,7 @@ Order By Company_name</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[SALES_BRANCH_CODE]"
-                      cachedDataType="i4"
-                      cachedName="SALES_BRANCH_CODE"
-                      lineageId="Package\Data Flow Task\GreatOutdoor2 Employees.Outputs[ADO NET Source Output].Columns[SALES_BRANCH_CODE]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[branch_code]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[WORK_PHONE]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[WORK_PHONE]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="WORK_PHONE"
@@ -5452,30 +5622,16 @@ Order By Company_name</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[_DateHired]"
-                      cachedDataType="date"
-                      cachedName="_DateHired"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[_DateHired]">
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4].Columns[SALES_BRANCH_CODE]"
+                      cachedDataType="i4"
+                      cachedName="SALES_BRANCH_CODE"
+                      lineageId="Package\Data Flow Task\GreatOutdoor2 Employees.Outputs[ADO NET Source Output].Columns[SALES_BRANCH_CODE]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[start_date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[_extension]"
-                      cachedDataType="wstr"
-                      cachedLength="6"
-                      cachedName="_extension"
-                      lineageId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[_extension]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[_extension]}</property>
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[branch_code]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -5634,6 +5790,11 @@ Order By Company_name</property>
                       dataType="bool"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[bene_day_care]"
                       name="bene_day_care" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[is_sales_staff]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[is_sales_staff]"
+                      name="is_sales_staff" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -5647,17 +5808,12 @@ Order By Company_name</property>
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\GreatOutdoor2 Employees.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output6]"
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output1]"
               endId="Package\Data Flow Task\Order_method OP.Inputs[ADO NET Destination Input]"
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\GO Order_Method.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output5]"
-              endId="Package\Data Flow Task\Region OP.Inputs[ADO NET Destination Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Branch.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output4]"
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output2]"
               endId="Package\Data Flow Task\Product_type OP.Inputs[ADO NET Destination Input]"
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\GO Product_type.Outputs[ADO NET Source Output]" />
@@ -5667,40 +5823,40 @@ Order By Company_name</property>
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\GO Product_line.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output2]"
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output4]"
               endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\GO Retailer.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output1]"
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output5]"
               endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\GO Order_Header.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output7]"
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output6]"
               endId="Package\Data Flow Task\Promotion OP.Inputs[ADO NET Destination Input]"
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\Promotion.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output8]"
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output7]"
               endId="Package\Data Flow Task\Campaign OP.Inputs[ADO NET Destination Input]"
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\Campaign.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Data Conversion Output1]"
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output8]"
+              endId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Branch.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
               endId="Package\Data Flow Task\OP jobs.Inputs[ADO NET Destination Input]"
               name="Data Conversion Output"
               startId="Package\Data Flow Task\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
-              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+              refId="Package\Data Flow Task.Paths[Data Conversion Output1]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 4]"
               name="Data Conversion Output"
               startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
-              endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
-              name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output1]"
               endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
@@ -5708,6 +5864,11 @@ Order By Company_name</property>
               startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
               endId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\splitten sales_staff in Fname + Lname.Outputs[Derived Column Output]" />
@@ -5727,12 +5888,12 @@ Order By Company_name</property>
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
               endId="Package\Data Flow Task\Bonus OP.Inputs[ADO NET Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\AccesDB Bonus.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
               endId="Package\Data Flow Task\Data Conversion 1.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\Acces Jobs.Outputs[OLE DB Source Output]" />
@@ -5741,6 +5902,11 @@ Order By Company_name</property>
               endId="Package\Data Flow Task\OP Employee.Inputs[ADO NET Destination Input]"
               name="Union All Output 1"
               startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[_region]"
+              endId="Package\Data Flow Task\Region OP.Inputs[ADO NET Destination Input]"
+              name="_region"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[_region]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -5769,23 +5935,27 @@ Order By Company_name</property>
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="591,158" />
+          Size="133,42"
+          Id="Package\Data Flow Task\GO Retailer"
+          TopLeft="60,546" />
         <NodeLayout
-          Size="98,42"
-          Id="Package\Data Flow Task\Sort"
-          TopLeft="548,58" />
+          Size="165,42"
+          Id="Package\Data Flow Task\GO Order_Method"
+          TopLeft="33,883" />
         <NodeLayout
-          Size="121,42"
-          Id="Package\Data Flow Task\Excel GO"
-          TopLeft="37.076923076923,49" />
+          Size="182,45"
+          Id="Package\Data Flow Task\Acces Jobs"
+          TopLeft="32.615384615385,397.769230769231" />
         <NodeLayout
-          Size="259,42"
-          Id="Package\Data Flow Task\splitten sales_staff in Fname + Lname"
-          TopLeft="243.807692307692,52.8846153846154" />
+          Size="124,42"
+          Id="Package\Data Flow Task\Bonus OP"
+          TopLeft="584,748" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Data Flow Task\GreatOutdoor2 Employees"
+          TopLeft="34.076923076923,159" />
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task\Derived Column"
@@ -5795,33 +5965,101 @@ Order By Company_name</property>
           Id="Package\Data Flow Task\OP Employee"
           TopLeft="1004.57692307692,222.5" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Data Flow Task\Derived Column 2"
-          TopLeft="343,160" />
+          Size="135,42"
+          Id="Package\Data Flow Task\Branch"
+          TopLeft="40,813" />
         <NodeLayout
-          Size="203,42"
-          Id="Package\Data Flow Task\GreatOutdoor2 Employees"
-          TopLeft="34.076923076923,159" />
+          Size="161,42"
+          Id="Package\Data Flow Task\Order_header OP"
+          TopLeft="590,509" />
         <NodeLayout
-          Size="161,47"
-          Id="Package\Data Flow Task\OP jobs"
-          TopLeft="600.884615384615,403.576923076923" />
+          Size="121,42"
+          Id="Package\Data Flow Task\Union All"
+          TopLeft="821,220" />
         <NodeLayout
           Size="165,42"
           Id="Package\Data Flow Task\Data Conversion 1"
           TopLeft="334,404" />
         <NodeLayout
-          Size="182,45"
-          Id="Package\Data Flow Task\Acces Jobs"
-          TopLeft="32.615384615385,397.769230769231" />
+          Size="144,42"
+          Id="Package\Data Flow Task\Promotion OP"
+          TopLeft="575,947" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Data Flow Task\Promotion"
+          TopLeft="33,945" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Data Flow Task\splitten sales_staff in Fname + Lname"
+          TopLeft="243.807692307692,52.8846153846154" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task\GO Order_Header"
+          TopLeft="38,480" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="591,158" />
+        <NodeLayout
+          Size="161,47"
+          Id="Package\Data Flow Task\OP jobs"
+          TopLeft="600.884615384615,403.576923076923" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Data Flow Task\Product_type OP"
+          TopLeft="578,680" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Data Flow Task\Merge Join"
+          TopLeft="352,513" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Data Flow Task\GO Product_type"
+          TopLeft="34,683" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Data Flow Task\Campaign OP"
+          TopLeft="576,1016" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Data Flow Task\Excel GO"
+          TopLeft="37.076923076923,49" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task\AccesDB Bonus"
+          TopLeft="39,748" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Data Flow Task\Region OP"
+          TopLeft="640,808" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task\Product_line OP"
+          TopLeft="578,617" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Data Flow Task\Sort"
+          TopLeft="548,58" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task\GO Product_line"
+          TopLeft="34,620" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task\Derived Column 2"
+          TopLeft="343,160" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Data Flow Task\Campaign"
+          TopLeft="33,1010" />
         <NodeLayout
           Size="203,53"
           Id="Package\Data Flow Task\Acces Employees"
           TopLeft="32.5769230769231,270.269230769231" />
         <NodeLayout
-          Size="121,42"
-          Id="Package\Data Flow Task\Union All"
-          TopLeft="821,220" />
+          Size="164,42"
+          Id="Package\Data Flow Task\Order_method OP"
+          TopLeft="573,882" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Union All Output 1]"
           TopLeft="942,242.25">
@@ -5845,7 +6083,7 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
           TopLeft="214.615384615385,422.634615384615">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5858,6 +6096,28 @@ Order By Company_name</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="111.884615384615,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="190,769">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="394,0"
+              Start="0,0"
+              End="386.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="386.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5880,6 +6140,28 @@ Order By Company_name</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="100.017482517483,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Merge Join Output]"
+          TopLeft="482,532">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108,0"
+              Start="0,0"
+              End="100.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="100.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5912,18 +6194,18 @@ Order By Company_name</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output2]"
-          TopLeft="506,180">
+          TopLeft="502.807692307692,76.4423076923077">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="85,0"
+              EndConnector="45.192307692308,0"
               Start="0,0"
-              End="77.5,0">
+              End="37.692307692308,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="77.5,0" />
+                    End="37.692307692308,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5968,18 +6250,18 @@ Order By Company_name</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="502.807692307692,76.4423076923077">
+          TopLeft="506,180">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.192307692308,0"
+              EndConnector="85,0"
               Start="0,0"
-              End="37.692307692308,0">
+              End="77.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="37.692307692308,0" />
+                    End="77.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5989,7 +6271,7 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
           TopLeft="499,426.038461538461">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6011,31 +6293,19 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="747,179">
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output7]"
+          TopLeft="159,1034">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="74,56.3333333333333"
+              EndConnector="417,0"
               Start="0,0"
-              End="66.5,56.3333333333333">
+              End="409.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="38.7706422018348,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.7706422018348,0"
-                    Point2="42.7706422018348,0"
-                    Point3="42.7706422018348,4" />
-                  <mssgle:LineSegment
-                    End="42.7706422018348,52.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="42.7706422018348,52.3333333333333"
-                    Point2="42.7706422018348,56.3333333333333"
-                    Point3="46.7706422018348,56.3333333333333" />
-                  <mssgle:LineSegment
-                    End="66.5,56.3333333333333" />
+                    End="409.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6045,81 +6315,19 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
-          TopLeft="237.076923076923,180.5">
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output6]"
+          TopLeft="160,967">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="105.923076923077,0"
+              EndConnector="415,0"
               Start="0,0"
-              End="98.423076923077,0">
+              End="407.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="98.423076923077,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Data Flow Task\GO Order_Header"
-          TopLeft="38,480" />
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Data Flow Task\GO Retailer"
-          TopLeft="60,546" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Data Flow Task\GO Product_line"
-          TopLeft="34,620" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Data Flow Task\GO Product_type"
-          TopLeft="34,683" />
-        <NodeLayout
-          Size="135,42"
-          Id="Package\Data Flow Task\Branch"
-          TopLeft="40,813" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Data Flow Task\GO Order_Method"
-          TopLeft="33,883" />
-        <NodeLayout
-          Size="127,42"
-          Id="Package\Data Flow Task\Promotion"
-          TopLeft="33,945" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Data Flow Task\Campaign"
-          TopLeft="33,1010" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Data Flow Task\Merge Join"
-          TopLeft="352,513" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Data Flow Task\Order_header OP"
-          TopLeft="590,509" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Merge Join Output]"
-          TopLeft="482,532">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="108,0"
-              Start="0,0"
-              End="100.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="100.5,0" />
+                    End="407.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6129,7 +6337,7 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output1]"
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output5]"
           TopLeft="201,501">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6163,7 +6371,7 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output2]"
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output4]"
           TopLeft="193,567">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6196,13 +6404,9 @@ Order By Company_name</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Task\Product_line OP"
-          TopLeft="578,616" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ADO NET Source Output3]"
-          TopLeft="189,639">
+          TopLeft="189,639.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6222,12 +6426,8 @@ Order By Company_name</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Data Flow Task\Product_type OP"
-          TopLeft="578,680" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output4]"
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output2]"
           TopLeft="193,702.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6248,68 +6448,8 @@ Order By Company_name</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task\AccesDB Bonus"
-          TopLeft="39,748" />
-        <NodeLayout
-          Size="124,42"
-          Id="Package\Data Flow Task\Bonus OP"
-          TopLeft="584,748" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
-          TopLeft="190,769">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="394,0"
-              Start="0,0"
-              End="386.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="386.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="128,42"
-          Id="Package\Data Flow Task\Region OP"
-          TopLeft="578,819" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output5]"
-          TopLeft="175,837">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="403,0"
-              Start="0,0"
-              End="395.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="395.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Data Flow Task\Order_method OP"
-          TopLeft="573,882" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output6]"
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output1]"
           TopLeft="198,903.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6330,24 +6470,54 @@ Order By Company_name</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Data Flow Task\Promotion OP"
-          TopLeft="575,947" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output7]"
-          TopLeft="160,967">
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
+          TopLeft="237.076923076923,180.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="415,0"
+              EndConnector="105.923076923077,0"
               Start="0,0"
-              End="407.5,0">
+              End="98.423076923077,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="407.5,0" />
+                    End="98.423076923077,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
+          TopLeft="747,179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,56.3333333333333"
+              Start="0,0"
+              End="66.5,56.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.7706422018348,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.7706422018348,0"
+                    Point2="42.7706422018348,0"
+                    Point3="42.7706422018348,4" />
+                  <mssgle:LineSegment
+                    End="42.7706422018348,52.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.7706422018348,52.3333333333333"
+                    Point2="42.7706422018348,56.3333333333333"
+                    Point3="46.7706422018348,56.3333333333333" />
+                  <mssgle:LineSegment
+                    End="66.5,56.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6357,49 +6527,60 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="143,42"
-          Id="Package\Data Flow Task\Campaign OP"
-          TopLeft="576,1016" />
+          Size="155,42"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="295.5,812.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ADO NET Source Output8]"
-          TopLeft="159,1034">
+          TopLeft="175,833.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="417,0"
+              EndConnector="120.5,0"
               Start="0,0"
-              End="409.5,0">
+              End="113,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="409.5,0" />
+                    End="113,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[_region]"
+          TopLeft="450.5,831.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="189.5,0"
+              Start="0,0"
+              End="182,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="182,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="73.7003515625,5,34.599296875,11.384765625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Excel GO">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OP Employee">
+    design-time-name="Package\Data Flow Task\GO Retailer">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6407,15 +6588,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\GreatOutdoor2 Employees">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OP jobs">
+    design-time-name="Package\Data Flow Task\GO Order_Method">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6436,20 +6609,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Acces Employees">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\GO Order_Header">
+    design-time-name="Package\Data Flow Task\Bonus OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6457,7 +6617,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\GO Retailer">
+    design-time-name="Package\Data Flow Task\GreatOutdoor2 Employees">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6465,15 +6625,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\GO Product_line">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\GO Product_type">
+    design-time-name="Package\Data Flow Task\OP Employee">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6489,7 +6641,15 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\GO Order_Method">
+    design-time-name="Package\Data Flow Task\Order_header OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Promotion OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6505,7 +6665,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Campaign">
+    design-time-name="Package\Data Flow Task\GO Order_Header">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6513,15 +6673,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Order_header OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Product_line OP">
+    design-time-name="Package\Data Flow Task\OP jobs">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6533,6 +6685,35 @@ Order By Company_name</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\GO Product_type">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Campaign OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Excel GO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6550,14 +6731,6 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Bonus OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Region OP">
     <Properties>
       <Property>
@@ -6566,23 +6739,44 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Product_line OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\GO Product_line">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Campaign">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Acces Employees">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Order_method OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Promotion OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Campaign OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
