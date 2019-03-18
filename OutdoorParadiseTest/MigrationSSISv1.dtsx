@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MigrationSSISv1"
   DTS:PackageType="5"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{2DD8C069-5F07-4D3E-976A-CB8CA4DD5119}">
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{FF3B3882-A444-45B0-8D30-7788AAE560AE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3800,6 +3800,11 @@
                       cachedLength="255"
                       cachedName="course"
                       lineageId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Output].Columns[course]" />
+                    <inputColumn
+                      refId="Package\Load initial data\Data Conversion 4.Inputs[Data Conversion Input].Columns[year]"
+                      cachedDataType="r8"
+                      cachedName="year"
+                      lineageId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Output].Columns[year]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3811,6 +3816,26 @@
                   name="Data Conversion Output"
                   synchronousInputId="Package\Load initial data\Data Conversion 4.Inputs[Data Conversion Input]">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\Load initial data\Data Conversion 4.Outputs[Data Conversion Output].Columns[_year]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load initial data\Data Conversion 4.Outputs[Data Conversion Output].Columns[_year]"
+                      name="_year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Excel GO Course.Outputs[Excel Source Output].Columns[year]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
                       refId="Package\Load initial data\Data Conversion 4.Outputs[Data Conversion Output].Columns[_course]"
                       dataType="wstr"
@@ -4263,7 +4288,8 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT  year, course
+FROM [HRM$]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -4272,7 +4298,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mapping from parameters in the SQL command to variables."
@@ -4301,16 +4327,6 @@
                       name="year"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Output].Columns[sales_staff]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Output].ExternalColumns[sales_staff]"
-                      length="255"
-                      lineageId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Output].Columns[sales_staff]"
-                      name="sales_staff"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Output].Columns[course]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -4328,11 +4344,6 @@
                       dataType="r8"
                       name="year" />
                     <externalMetadataColumn
-                      refId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Output].ExternalColumns[sales_staff]"
-                      dataType="wstr"
-                      length="255"
-                      name="sales_staff" />
-                    <externalMetadataColumn
                       refId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Output].ExternalColumns[course]"
                       dataType="wstr"
                       length="255"
@@ -4349,12 +4360,6 @@
                       dataType="r8"
                       lineageId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Error Output].Columns[year]"
                       name="year" />
-                    <outputColumn
-                      refId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Error Output].Columns[sales_staff]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Error Output].Columns[sales_staff]"
-                      name="sales_staff" />
                     <outputColumn
                       refId="Package\Load initial data\Excel GO Course.Outputs[Excel Source Error Output].Columns[course]"
                       dataType="wstr"
@@ -9002,7 +9007,7 @@ Order By Company_name</property>
         <NodeLayout
           Size="165,42"
           Id="Package\Load initial data\Data Conversion 4"
-          TopLeft="270,5" />
+          TopLeft="279,11" />
         <NodeLayout
           Size="133,42"
           Id="Package\Load initial data\GO Retailer"
@@ -9287,18 +9292,18 @@ Order By Company_name</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load initial data.Paths[Excel Source Output]"
-          TopLeft="173.5,28.5">
+          TopLeft="173.5,31.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="96.5,0"
+              EndConnector="105.5,0"
               Start="0,0"
-              End="89,0">
+              End="98,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="89,0" />
+                    End="98,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9375,18 +9380,18 @@ Order By Company_name</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load initial data.Paths[Data Conversion Output3]"
-          TopLeft="435,26.75">
+          TopLeft="444,29.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="124.25,0"
+              EndConnector="115.25,0"
               Start="0,0"
-              End="116.75,0">
+              End="107.75,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="116.75,0" />
+                    End="107.75,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
