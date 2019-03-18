@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MigrationSSISv1"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{228C5E53-BF14-4DCA-B0AC-EA42271E552B}">
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{2DD8C069-5F07-4D3E-976A-CB8CA4DD5119}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -73,83 +73,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Load employee_go_training\Data Conversion 4"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion 4"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Load employee_go_training\Data Conversion 4.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load employee_go_training\Data Conversion 4.Inputs[Data Conversion Input].Columns[course]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="course"
-                      lineageId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].Columns[course]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load employee_go_training\Data Conversion 4.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Load employee_go_training\Data Conversion 4.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Data Conversion 4.Outputs[Data Conversion Output].Columns[_course]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Load employee_go_training\Data Conversion 4.Outputs[Data Conversion Output].Columns[_course]"
-                      name="_course"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].Columns[course]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Load employee_go_training\Data Conversion 4.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Load employee_go_training\Data Conversion 4.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Data Conversion 4.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load employee_go_training\Data Conversion 4.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Data Conversion 4.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load employee_go_training\Data Conversion 4.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Load employee_go_training\Employee_GO_Training OP"
               componentClassID="Microsoft.ManagedComponentHost"
@@ -385,252 +308,6 @@
                       refId="Package\Load employee_go_training\Excel GO.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Load employee_go_training\Excel GO.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Load employee_go_training\Excel GO Course"
-              componentClassID="Microsoft.ExcelSource"
-              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Excel Source"
-              name="Excel GO Course"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">HRM$</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mapping from parameters in the SQL command to variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load employee_go_training\Excel GO Course.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output]"
-                  name="Excel Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].Columns[year]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].ExternalColumns[year]"
-                      lineageId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].Columns[year]"
-                      name="year"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].Columns[sales_staff]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].ExternalColumns[sales_staff]"
-                      length="255"
-                      lineageId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].Columns[sales_staff]"
-                      name="sales_staff"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].Columns[course]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].ExternalColumns[course]"
-                      length="255"
-                      lineageId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].Columns[course]"
-                      name="course"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].ExternalColumns[year]"
-                      dataType="r8"
-                      name="year" />
-                    <externalMetadataColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].ExternalColumns[sales_staff]"
-                      dataType="wstr"
-                      length="255"
-                      name="sales_staff" />
-                    <externalMetadataColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].ExternalColumns[course]"
-                      dataType="wstr"
-                      length="255"
-                      name="course" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output]"
-                  isErrorOut="true"
-                  name="Excel Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output].Columns[year]"
-                      dataType="r8"
-                      lineageId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output].Columns[year]"
-                      name="year" />
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output].Columns[sales_staff]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output].Columns[sales_staff]"
-                      name="sales_staff" />
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output].Columns[course]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output].Columns[course]"
-                      name="course" />
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Load employee_go_training\Go_Training OP"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
-              name="Go_Training OP"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="The Destination database table name."
-                  expressionType="Notify"
-                  name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Go_Training"</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
-                  expressionType="Notify"
-                  name="BatchSize">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
-                  expressionType="Notify"
-                  name="CommandTimeout">30</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
-                  expressionType="Notify"
-                  name="UseBulkInsertWhenPossible">true</property>
-                <property
-                  dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load employee_go_training\Go_Training OP.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GT7JTJI.OutdoorParadise1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GT7JTJI.OutdoorParadise1]"
-                  description="Managed connection manager"
-                  name="IDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Load employee_go_training\Go_Training OP.Inputs[ADO NET Destination Input]"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="ADO NET Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load employee_go_training\Go_Training OP.Inputs[ADO NET Destination Input].Columns[year]"
-                      cachedDataType="r8"
-                      cachedName="year"
-                      externalMetadataColumnId="Package\Load employee_go_training\Go_Training OP.Inputs[ADO NET Destination Input].ExternalColumns[year]"
-                      lineageId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output].Columns[year]" />
-                    <inputColumn
-                      refId="Package\Load employee_go_training\Go_Training OP.Inputs[ADO NET Destination Input].Columns[_course]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="_course"
-                      externalMetadataColumnId="Package\Load employee_go_training\Go_Training OP.Inputs[ADO NET Destination Input].ExternalColumns[course]"
-                      lineageId="Package\Load employee_go_training\Data Conversion 4.Outputs[Data Conversion Output].Columns[_course]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load employee_go_training\Go_Training OP.Inputs[ADO NET Destination Input].ExternalColumns[go_training_id]"
-                      dataType="i4"
-                      name="go_training_id" />
-                    <externalMetadataColumn
-                      refId="Package\Load employee_go_training\Go_Training OP.Inputs[ADO NET Destination Input].ExternalColumns[year]"
-                      dataType="i4"
-                      name="year" />
-                    <externalMetadataColumn
-                      refId="Package\Load employee_go_training\Go_Training OP.Inputs[ADO NET Destination Input].ExternalColumns[course]"
-                      dataType="wstr"
-                      length="50"
-                      name="course" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load employee_go_training\Go_Training OP.Outputs[ADO NET Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="ADO NET Destination Error Output"
-                  synchronousInputId="Package\Load employee_go_training\Go_Training OP.Inputs[ADO NET Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Go_Training OP.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load employee_go_training\Go_Training OP.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load employee_go_training\Go_Training OP.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load employee_go_training\Go_Training OP.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1209,11 +886,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Load employee_go_training\OP"
+              refId="Package\Load employee_go_training\OP Go_Traning"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
-              name="OP"
+              name="OP Go_Traning"
               usesDispositions="true"
               version="4">
               <properties>
@@ -1248,7 +925,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load employee_go_training\OP.Connections[IDbConnection]"
+                  refId="Package\Load employee_go_training\OP Go_Traning.Connections[IDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-GT7JTJI.OutdoorParadise1]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GT7JTJI.OutdoorParadise1]"
                   description="Managed connection manager"
@@ -1256,86 +933,86 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output]"
+                  refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output]"
                   name="ADO NET Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[go_training_id]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[go_training_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].ExternalColumns[go_training_id]"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[go_training_id]"
+                      externalMetadataColumnId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].ExternalColumns[go_training_id]"
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[go_training_id]"
                       name="go_training_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[year]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[year]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].ExternalColumns[year]"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[year]"
+                      externalMetadataColumnId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].ExternalColumns[year]"
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[year]"
                       name="year"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[course]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[course]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].ExternalColumns[course]"
+                      externalMetadataColumnId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].ExternalColumns[course]"
                       length="50"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[course]"
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[course]"
                       name="course"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].ExternalColumns[go_training_id]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].ExternalColumns[go_training_id]"
                       dataType="i4"
                       name="go_training_id" />
                     <externalMetadataColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].ExternalColumns[year]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].ExternalColumns[year]"
                       dataType="i4"
                       name="year" />
                     <externalMetadataColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].ExternalColumns[course]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].ExternalColumns[course]"
                       dataType="wstr"
                       length="50"
                       name="course" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output]"
+                  refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output]"
                   isErrorOut="true"
                   name="ADO NET Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output].Columns[go_training_id]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output].Columns[go_training_id]"
                       dataType="i4"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output].Columns[go_training_id]"
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output].Columns[go_training_id]"
                       name="go_training_id" />
                     <outputColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output].Columns[year]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output].Columns[year]"
                       dataType="i4"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output].Columns[year]"
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output].Columns[year]"
                       name="year" />
                     <outputColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output].Columns[course]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output].Columns[course]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output].Columns[course]"
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output].Columns[course]"
                       name="course" />
                     <outputColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1938,7 +1615,7 @@
                       refId="Package\Load employee_go_training\Sort 2.Inputs[Sort Input].Columns[go_training_id]"
                       cachedDataType="i4"
                       cachedName="go_training_id"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[go_training_id]">
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[go_training_id]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1954,7 +1631,7 @@
                       refId="Package\Load employee_go_training\Sort 2.Inputs[Sort Input].Columns[year]"
                       cachedDataType="i4"
                       cachedName="year"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[year]">
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[year]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1971,7 +1648,7 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="course"
-                      lineageId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[course]">
+                      lineageId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[course]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2003,7 +1680,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[go_training_id]}</property>
+                          name="SortColumnId">#{Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[go_training_id]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2016,7 +1693,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[year]}</property>
+                          name="SortColumnId">#{Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[year]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2031,7 +1708,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Load employee_go_training\OP.Outputs[ADO NET Source Output].Columns[course]}</property>
+                          name="SortColumnId">#{Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output].Columns[course]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2319,12 +1996,7 @@
               refId="Package\Load employee_go_training.Paths[ADO NET Source Output1]"
               endId="Package\Load employee_go_training\Sort 2.Inputs[Sort Input]"
               name="ADO NET Source Output"
-              startId="Package\Load employee_go_training\OP.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Load employee_go_training.Paths[Data Conversion Output]"
-              endId="Package\Load employee_go_training\Go_Training OP.Inputs[ADO NET Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Load employee_go_training\Data Conversion 4.Outputs[Data Conversion Output]" />
+              startId="Package\Load employee_go_training\OP Go_Traning.Outputs[ADO NET Source Output]" />
             <path
               refId="Package\Load employee_go_training.Paths[Derived Column Output]"
               endId="Package\Load employee_go_training\Sort.Inputs[Sort Input]"
@@ -2335,11 +2007,6 @@
               endId="Package\Load employee_go_training\splitten sales_staff in Fname + Lname.Inputs[Derived Column Input]"
               name="Excel Source Output"
               startId="Package\Load employee_go_training\Excel GO.Outputs[Excel Source Output]" />
-            <path
-              refId="Package\Load employee_go_training.Paths[Excel Source Output1]"
-              endId="Package\Load employee_go_training\Data Conversion 4.Inputs[Data Conversion Input]"
-              name="Excel Source Output"
-              startId="Package\Load employee_go_training\Excel GO Course.Outputs[Excel Source Output]" />
             <path
               refId="Package\Load employee_go_training.Paths[Merge Join Output]"
               endId="Package\Load employee_go_training\Sort 3.Inputs[Sort Input]"
@@ -8899,7 +8566,7 @@ Order By Company_name</property>
               name="ADO NET Source Output"
               startId="Package\Load initial data\Campaign.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Load initial data.Paths[ADO NET Source Output10]"
+              refId="Package\Load initial data.Paths[ADO NET Source Output8]"
               endId="Package\Load initial data\Data Conversion 3.Inputs[Data Conversion Input]"
               name="ADO NET Source Output"
               startId="Package\Load initial data\Order_Details.Outputs[ADO NET Source Output]" />
@@ -8909,42 +8576,42 @@ Order By Company_name</property>
               name="ADO NET Source Output"
               startId="Package\Load initial data\Sales_Target.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Load initial data.Paths[ADO NET Source Output8]"
+              refId="Package\Load initial data.Paths[ADO NET Source Output10]"
               endId="Package\Load initial data\Conditional Split.Inputs[Conditional Split Input]"
               name="ADO NET Source Output"
               startId="Package\Load initial data\Branch.Outputs[ADO NET Source Output]" />
             <path
+              refId="Package\Load initial data.Paths[Data Conversion Output4]"
+              endId="Package\Load initial data\OP jobs.Inputs[ADO NET Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load initial data\Data Conversion 1.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\Load initial data.Paths[Data Conversion Output3]"
+              endId="Package\Load initial data\Go_Training OP.Inputs[ADO NET Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load initial data\Data Conversion 4.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load initial data.Paths[Data Conversion Output1]"
+              endId="Package\Load initial data\Sales_Target OP.Inputs[ADO NET Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load initial data\sales_target conversie.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load initial data.Paths[Data Conversion Output]"
               endId="Package\Load initial data\Order_Details OP.Inputs[ADO NET Destination Input]"
               name="Data Conversion Output"
               startId="Package\Load initial data\Data Conversion 3.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Load initial data.Paths[Data Conversion Output2]"
-              endId="Package\Load initial data\Sales_Target OP.Inputs[ADO NET Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Load initial data\sales_target conversie.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Load initial data.Paths[Data Conversion Output1]"
               endId="Package\Load initial data\Union All.Inputs[Union All Input 4]"
               name="Data Conversion Output"
               startId="Package\Load initial data\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Load initial data.Paths[Data Conversion Output4]"
-              endId="Package\Load initial data\Go_Training OP.Inputs[ADO NET Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Load initial data\Data Conversion 4.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Load initial data.Paths[Data Conversion Output]"
-              endId="Package\Load initial data\OP jobs.Inputs[ADO NET Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Load initial data\Data Conversion 1.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Load initial data.Paths[Derived Column Output1]"
+              refId="Package\Load initial data.Paths[Derived Column Output]"
               endId="Package\Load initial data\Union All.Inputs[Union All Input 1]"
               name="Derived Column Output"
               startId="Package\Load initial data\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Load initial data.Paths[Derived Column Output]"
+              refId="Package\Load initial data.Paths[Derived Column Output1]"
               endId="Package\Load initial data\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Load initial data\Derived Column 2.Outputs[Derived Column Output]" />
@@ -8959,17 +8626,17 @@ Order By Company_name</property>
               name="Merge Join Output"
               startId="Package\Load initial data\Merge Join.Outputs[Merge Join Output]" />
             <path
-              refId="Package\Load initial data.Paths[OLE DB Source Output1]"
+              refId="Package\Load initial data.Paths[OLE DB Source Output]"
               endId="Package\Load initial data\Bonus OP.Inputs[ADO NET Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Load initial data\AccesDB Bonus.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load initial data.Paths[OLE DB Source Output2]"
+              refId="Package\Load initial data.Paths[OLE DB Source Output1]"
               endId="Package\Load initial data\Data Conversion 1.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Load initial data\Acces Jobs.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load initial data.Paths[OLE DB Source Output]"
+              refId="Package\Load initial data.Paths[OLE DB Source Output2]"
               endId="Package\Load initial data\Derived Column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Load initial data\Acces Employees.Outputs[OLE DB Source Output]" />
@@ -9011,13 +8678,13 @@ Order By Company_name</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="154,42"
-          Id="Package\Load initial data"
-          TopLeft="139.5,191.5" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Load employee_go_training"
           TopLeft="352,310" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load initial data"
+          TopLeft="139.5,191.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="216.5,233.5">
@@ -9056,122 +8723,458 @@ Order By Company_name</property>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Load employee_go_training">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Load employee_go_training\splitten sales_staff in Fname + Lname"
+          TopLeft="218.807692307692,79.884615384615" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load employee_go_training\OP Go_Traning"
+          TopLeft="34.5,318" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Load employee_go_training\Excel GO"
+          TopLeft="53.326923076923,75.75" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Load employee_go_training\Sort 2"
+          TopLeft="268,314.686305732484" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load employee_go_training\Merge Join 1"
+          TopLeft="528.5,203" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Load employee_go_training\Greatoutdoor1 Employees"
+          TopLeft="14,199.5" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Load employee_go_training\Employee_GO_Training OP"
+          TopLeft="898.5,314" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Load employee_go_training\Sort"
+          TopLeft="548,79.5" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Load employee_go_training\Sort 3"
+          TopLeft="698.5,208" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load employee_go_training\Merge Join 2"
+          TopLeft="680.5,319" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Load employee_go_training\Sort 1"
+          TopLeft="267.5,204" />
+        <EdgeLayout
+          Id="Package\Load employee_go_training.Paths[Sort Output3]"
+          TopLeft="375,337.843152866242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="305.5,0"
+              Start="0,0"
+              End="298,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="298,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load employee_go_training.Paths[Sort Output2]"
+          TopLeft="751,250">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load employee_go_training.Paths[Sort Output1]"
+          TopLeft="374.5,224.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="154,0"
+              Start="0,0"
+              End="146.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="146.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load employee_go_training.Paths[Sort Output]"
+          TopLeft="597.5,121.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81.5"
+              Start="0,0"
+              End="0,74">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load employee_go_training.Paths[Merge Join Output1]"
+          TopLeft="819.5,337.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79,0"
+              Start="0,0"
+              End="71.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load employee_go_training.Paths[Merge Join Output]"
+          TopLeft="667.5,226.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31,0"
+              Start="0,0"
+              End="23.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load employee_go_training.Paths[Excel Source Output]"
+          TopLeft="174.326923076923,98.8173076923075">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44.480769230769,0"
+              Start="0,0"
+              End="36.980769230769,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="36.980769230769,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load employee_go_training.Paths[Derived Column Output]"
+          TopLeft="477.807692307692,100.692307692307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.192307692308,0"
+              Start="0,0"
+              End="62.692307692308,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.692307692308,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load employee_go_training.Paths[ADO NET Source Output1]"
+          TopLeft="184.5,337.343152866242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83.5,0"
+              Start="0,0"
+              End="76,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="76,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load employee_go_training.Paths[ADO NET Source Output]"
+          TopLeft="215,222.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.5,0"
+              Start="0,0"
+              End="45,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
     design-time-name="Package\Load initial data">
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="165,42"
+          Id="Package\Load initial data\Data Conversion 4"
+          TopLeft="270,5" />
+        <NodeLayout
           Size="133,42"
           Id="Package\Load initial data\GO Retailer"
           TopLeft="62,550" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Load initial data\GO Order_Method"
-          TopLeft="35,887" />
-        <NodeLayout
-          Size="182,45"
-          Id="Package\Load initial data\Acces Jobs"
-          TopLeft="34.615384615385,401.769230769231" />
-        <NodeLayout
-          Size="124,42"
-          Id="Package\Load initial data\Bonus OP"
-          TopLeft="586,752" />
-        <NodeLayout
-          Size="203,42"
-          Id="Package\Load initial data\GreatOutdoor2 Employees"
-          TopLeft="27.076923076923,254" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Load initial data\Derived Column"
-          TopLeft="333.094405594406,333.646853146853" />
-        <NodeLayout
-          Size="141,42"
-          Id="Package\Load initial data\OP Employee"
-          TopLeft="764.57692307692,330.5" />
-        <NodeLayout
-          Size="135,42"
-          Id="Package\Load initial data\Branch"
-          TopLeft="42,817" />
         <NodeLayout
           Size="161,42"
           Id="Package\Load initial data\Order_header OP"
           TopLeft="592,513" />
         <NodeLayout
-          Size="121,42"
-          Id="Package\Load initial data\Union All"
-          TopLeft="584,331" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Load initial data\Data Conversion 1"
-          TopLeft="336,408" />
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Load initial data\Promotion OP"
-          TopLeft="577,951" />
-        <NodeLayout
-          Size="127,42"
-          Id="Package\Load initial data\Promotion"
-          TopLeft="35,949" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Load initial data\GO Order_Header"
-          TopLeft="40,484" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Load initial data\Data Conversion"
-          TopLeft="561,252" />
-        <NodeLayout
-          Size="161,47"
-          Id="Package\Load initial data\OP jobs"
-          TopLeft="602.884615384615,407.576923076923" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Load initial data\Product_type OP"
-          TopLeft="580,684" />
-        <NodeLayout
           Size="130,42"
           Id="Package\Load initial data\Merge Join"
           TopLeft="354,517" />
         <NodeLayout
-          Size="159,42"
-          Id="Package\Load initial data\GO Product_type"
-          TopLeft="36,687" />
+          Size="157,42"
+          Id="Package\Load initial data\Sales_Target OP"
+          TopLeft="571,1090" />
+        <NodeLayout
+          Size="182,45"
+          Id="Package\Load initial data\Acces Jobs"
+          TopLeft="34.615384615385,401.769230769231" />
         <NodeLayout
           Size="143,42"
-          Id="Package\Load initial data\Campaign OP"
-          TopLeft="578,1020" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Load initial data\AccesDB Bonus"
-          TopLeft="41,752" />
+          Id="Package\Load initial data\Order_Details"
+          TopLeft="32,1163" />
         <NodeLayout
           Size="128,42"
           Id="Package\Load initial data\Region OP"
           TopLeft="590,811" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Load initial data\Product_line OP"
-          TopLeft="580,621" />
-        <NodeLayout
           Size="155,42"
-          Id="Package\Load initial data\GO Product_line"
-          TopLeft="36,624" />
+          Id="Package\Load initial data\Conditional Split"
+          TopLeft="297.5,816.5" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Load initial data\Derived Column 2"
-          TopLeft="325,250" />
+          Size="144,42"
+          Id="Package\Load initial data\Promotion OP"
+          TopLeft="577,951" />
         <NodeLayout
           Size="126,42"
           Id="Package\Load initial data\Campaign"
           TopLeft="35,1014" />
         <NodeLayout
-          Size="203,53"
-          Id="Package\Load initial data\Acces Employees"
-          TopLeft="29.5769230769231,333.269230769231" />
+          Size="127,42"
+          Id="Package\Load initial data\Promotion"
+          TopLeft="35,949" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Load initial data\Data Conversion 1"
+          TopLeft="336,408" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Load initial data\Branch"
+          TopLeft="42,817" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Load initial data\Excel GO Course"
+          TopLeft="16.5,10" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Load initial data\Order_Details OP"
+          TopLeft="574,1160" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Load initial data\Product_type OP"
+          TopLeft="580,684" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Load initial data\GO Product_type"
+          TopLeft="36,687" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load initial data\Data Conversion"
+          TopLeft="561,252" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Load initial data\Data Conversion 3"
+          TopLeft="290,1162" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Load initial data\GO Product_line"
+          TopLeft="36,624" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Load initial data\Bonus OP"
+          TopLeft="586,752" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Load initial data\Derived Column 2"
+          TopLeft="325,250" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load initial data\Product_line OP"
+          TopLeft="580,621" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Load initial data\Sales_Target"
+          TopLeft="33,1082" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Load initial data\GreatOutdoor2 Employees"
+          TopLeft="27.076923076923,254" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Load initial data\sales_target conversie"
+          TopLeft="284,1085" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Load initial data\GO Order_Method"
+          TopLeft="35,887" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Load initial data\Campaign OP"
+          TopLeft="578,1020" />
         <NodeLayout
           Size="164,42"
           Id="Package\Load initial data\Order_method OP"
           TopLeft="575,886" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Load initial data\Go_Training OP"
+          TopLeft="559.25,6.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Load initial data\AccesDB Bonus"
+          TopLeft="41,752" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Load initial data\OP Employee"
+          TopLeft="764.57692307692,330.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Load initial data\GO Order_Header"
+          TopLeft="40,484" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Load initial data\Union All"
+          TopLeft="584,331" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load initial data\Derived Column"
+          TopLeft="333.094405594406,333.646853146853" />
+        <NodeLayout
+          Size="161,47"
+          Id="Package\Load initial data\OP jobs"
+          TopLeft="602.884615384615,407.576923076923" />
+        <NodeLayout
+          Size="203,53"
+          Id="Package\Load initial data\Acces Employees"
+          TopLeft="29.5769230769231,333.269230769231" />
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[_region]"
+          TopLeft="452.5,834.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.5,0"
+              Start="0,0"
+              End="130,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="130,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="47.7003515625,5,34.599296875,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load initial data.Paths[Union All Output 1]"
           TopLeft="705,351.75">
@@ -9196,6 +9199,28 @@ Order By Company_name</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load initial data.Paths[OLE DB Source Output2]"
+          TopLeft="232.576923076923,357.208041958042">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.517482517483,0"
+              Start="0,0"
+              End="93.0174825174829,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="93.0174825174829,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[OLE DB Source Output1]"
           TopLeft="216.615384615385,426.634615384615">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9217,7 +9242,7 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load initial data.Paths[OLE DB Source Output1]"
+          Id="Package\Load initial data.Paths[OLE DB Source Output]"
           TopLeft="192,773">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9230,28 +9255,6 @@ Order By Company_name</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="386.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[OLE DB Source Output]"
-          TopLeft="232.576923076923,357.208041958042">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.517482517483,0"
-              Start="0,0"
-              End="93.0174825174829,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="93.0174825174829,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9283,19 +9286,19 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load initial data.Paths[Derived Column Output1]"
-          TopLeft="487.094405594406,353.323426573427">
+          Id="Package\Load initial data.Paths[Excel Source Output]"
+          TopLeft="173.5,28.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="96.905594405594,0"
+              EndConnector="96.5,0"
               Start="0,0"
-              End="89.405594405594,0">
+              End="89,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="89.405594405594,0" />
+                    End="89,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9305,7 +9308,7 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load initial data.Paths[Derived Column Output]"
+          Id="Package\Load initial data.Paths[Derived Column Output1]"
           TopLeft="488,272">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9327,7 +9330,29 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load initial data.Paths[Data Conversion Output]"
+          Id="Package\Load initial data.Paths[Derived Column Output]"
+          TopLeft="487.094405594406,353.323426573427">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.905594405594,0"
+              Start="0,0"
+              End="89.405594405594,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="89.405594405594,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[Data Conversion Output4]"
           TopLeft="501,430.038461538461">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9340,6 +9365,160 @@ Order By Company_name</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="94.384615384615,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[Data Conversion Output3]"
+          TopLeft="435,26.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.25,0"
+              Start="0,0"
+              End="116.75,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="116.75,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[Data Conversion Output2]"
+          TopLeft="641.75,294">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[Data Conversion Output1]"
+          TopLeft="468,1108.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="103,0"
+              Start="0,0"
+              End="95.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="95.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[Data Conversion Output]"
+          TopLeft="455,1182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119,0"
+              Start="0,0"
+              End="111.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="111.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[ADO NET Source Output10]"
+          TopLeft="177,837.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.5,0"
+              Start="0,0"
+              End="113,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="113,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[ADO NET Source Output9]"
+          TopLeft="173,1104.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="111,0"
+              Start="0,0"
+              End="103.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="103.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[ADO NET Source Output8]"
+          TopLeft="175,1183.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="115,0"
+              Start="0,0"
+              End="107.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="107.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9548,246 +9727,6 @@ Order By Company_name</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[Data Conversion Output1]"
-          TopLeft="641.75,294">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37"
-              Start="0,0"
-              End="0,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Load initial data\Conditional Split"
-          TopLeft="297.5,816.5" />
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[ADO NET Source Output8]"
-          TopLeft="177,837.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="120.5,0"
-              Start="0,0"
-              End="113,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="113,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[_region]"
-          TopLeft="452.5,834.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="137.5,0"
-              Start="0,0"
-              End="130,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="130,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="47.7003515625,5,34.599296875,11.384765625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="140,42"
-          Id="Package\Load initial data\Sales_Target"
-          TopLeft="33,1082" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Load initial data\Sales_Target OP"
-          TopLeft="571,1090" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\Load initial data\sales_target conversie"
-          TopLeft="284,1085" />
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[ADO NET Source Output9]"
-          TopLeft="173,1104.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="111,0"
-              Start="0,0"
-              End="103.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="103.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[Data Conversion Output2]"
-          TopLeft="468,1108.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="103,0"
-              Start="0,0"
-              End="95.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="95.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="143,42"
-          Id="Package\Load initial data\Order_Details"
-          TopLeft="32,1163" />
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Load initial data\Order_Details OP"
-          TopLeft="574,1160" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Load initial data\Data Conversion 3"
-          TopLeft="290,1162" />
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[ADO NET Source Output10]"
-          TopLeft="175,1183.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="115,0"
-              Start="0,0"
-              End="107.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="107.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[Data Conversion Output3]"
-          TopLeft="455,1182">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="119,0"
-              Start="0,0"
-              End="111.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="111.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Load initial data\Excel GO Course"
-          TopLeft="16.5,10" />
-        <NodeLayout
-          Size="153,42"
-          Id="Package\Load initial data\Go_Training OP"
-          TopLeft="559.25,6.5" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Load initial data\Data Conversion 4"
-          TopLeft="270,5" />
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[Excel Source Output]"
-          TopLeft="173.5,28.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="96.5,0"
-              Start="0,0"
-              End="89,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="89,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[Data Conversion Output4]"
-          TopLeft="435,26.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="124.25,0"
-              Start="0,0"
-              End="116.75,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="116.75,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -9800,7 +9739,15 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\GO Order_Method">
+    design-time-name="Package\Load initial data\Order_header OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Sales_Target OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9821,7 +9768,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Bonus OP">
+    design-time-name="Package\Load initial data\Order_Details">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9829,31 +9776,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\GreatOutdoor2 Employees">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\OP Employee">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Branch">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Order_header OP">
+    design-time-name="Package\Load initial data\Region OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9869,6 +9792,14 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Campaign">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load initial data\Promotion">
     <Properties>
       <Property>
@@ -9877,7 +9808,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\GO Order_Header">
+    design-time-name="Package\Load initial data\Branch">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9885,7 +9816,20 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\OP jobs">
+    design-time-name="Package\Load initial data\Excel GO Course">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Order_Details OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9909,7 +9853,71 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\GO Product_line">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Bonus OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Product_line OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Sales_Target">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\GreatOutdoor2 Employees">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\GO Order_Method">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load initial data\Campaign OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Order_method OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Go_Training OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9930,7 +9938,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Region OP">
+    design-time-name="Package\Load initial data\OP Employee">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9938,7 +9946,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Product_line OP">
+    design-time-name="Package\Load initial data\GO Order_Header">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9946,15 +9954,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\GO Product_line">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Campaign">
+    design-time-name="Package\Load initial data\OP jobs">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9974,442 +9974,5 @@ Order By Company_name</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Order_method OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Sales_Target">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Sales_Target OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Order_Details">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Order_Details OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Excel GO Course">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Go_Training OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load employee_go_training">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="259,42"
-          Id="Package\Load employee_go_training\splitten sales_staff in Fname + Lname"
-          TopLeft="290.807692307692,146.884615384615" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Load employee_go_training\Excel GO"
-          TopLeft="76.326923076923,145.75" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Load employee_go_training\Excel GO Course"
-          TopLeft="60,65" />
-        <NodeLayout
-          Size="153,42"
-          Id="Package\Load employee_go_training\Go_Training OP"
-          TopLeft="602.75,61.5" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Load employee_go_training\Data Conversion 4"
-          TopLeft="313.5,60" />
-        <NodeLayout
-          Size="206,42"
-          Id="Package\Load employee_go_training\Employee_GO_Training OP"
-          TopLeft="1032.5,92" />
-        <NodeLayout
-          Size="201,42"
-          Id="Package\Load employee_go_training\Greatoutdoor1 Employees"
-          TopLeft="70,224.5" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Load employee_go_training\Sort"
-          TopLeft="648,145.5" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Load employee_go_training\Sort 1"
-          TopLeft="384.5,224" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Load employee_go_training\Merge Join 1"
-          TopLeft="634.5,222" />
-        <NodeLayout
-          Size="92,42"
-          Id="Package\Load employee_go_training\OP"
-          TopLeft="899.5,247" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Load employee_go_training\Sort 2"
-          TopLeft="1015,201.686305732484" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Load employee_go_training\Sort 3"
-          TopLeft="816.5,186" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Load employee_go_training\Merge Join 2"
-          TopLeft="843.5,99" />
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[Excel Source Output]"
-          TopLeft="197.326923076923,167.317307692308">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="93.480769230769,0"
-              Start="0,0"
-              End="85.980769230769,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="85.980769230769,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[Excel Source Output1]"
-          TopLeft="217,83.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="96.5,0"
-              Start="0,0"
-              End="89,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="89,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[Data Conversion Output]"
-          TopLeft="478.5,81.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="124.25,0"
-              Start="0,0"
-              End="116.75,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="116.75,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[Derived Column Output]"
-          TopLeft="549.807692307692,167.192307692308">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="98.192307692308,0"
-              Start="0,0"
-              End="90.692307692308,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="90.692307692308,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[ADO NET Source Output]"
-          TopLeft="271,245.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="113.5,0"
-              Start="0,0"
-              End="106,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="106,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[Sort Output]"
-          TopLeft="700.5,187.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.5"
-              Start="0,0"
-              End="0,27">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[Sort Output1]"
-          TopLeft="491.5,244">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="143,0"
-              Start="0,0"
-              End="135.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="135.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[ADO NET Source Output1]"
-          TopLeft="991.5,268">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="23.5,-45.3136942675159"
-              Start="0,0"
-              End="16,-45.3136942675159">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="7.75,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.75,0"
-                    Point2="11.75,0"
-                    Point3="11.75,-4" />
-                  <mssgle:LineSegment
-                    End="11.75,-41.3136942675159" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11.75,-41.3136942675159"
-                    Point2="11.75,-45.3136942675159"
-                    Point3="15.75,-45.3136942675159" />
-                  <mssgle:LineSegment
-                    End="16,-45.3136942675159" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[Merge Join Output]"
-          TopLeft="773.5,243">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="43,-36"
-              Start="0,0"
-              End="35.5,-36">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="17.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.5,0"
-                    Point2="21.5,0"
-                    Point3="21.5,-4" />
-                  <mssgle:LineSegment
-                    End="21.5,-32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.5,-32"
-                    Point2="21.5,-36"
-                    Point3="25.5,-36" />
-                  <mssgle:LineSegment
-                    End="35.5,-36" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[Sort Output2]"
-          TopLeft="870,186">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="21.1666666666666,-45"
-              Start="0,0"
-              End="21.1666666666666,-37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-22.6927453769559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-22.6927453769559"
-                    Point2="0,-26.6927453769559"
-                    Point3="4,-26.6927453769559" />
-                  <mssgle:LineSegment
-                    End="17.1666666666666,-26.6927453769559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.1666666666666,-26.6927453769559"
-                    Point2="21.1666666666666,-26.6927453769559"
-                    Point3="21.1666666666666,-30.6927453769559" />
-                  <mssgle:LineSegment
-                    End="21.1666666666666,-37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[Sort Output3]"
-          TopLeft="1068.5,201.686305732484">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-133.666666666667,-60.6863057324841"
-              Start="0,0"
-              End="-133.666666666667,-53.1863057324841">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-31.9974245952288" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-31.9974245952288"
-                    Point2="0,-35.9974245952288"
-                    Point3="-4,-35.9974245952288" />
-                  <mssgle:LineSegment
-                    End="-129.666666666667,-35.9974245952288" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-129.666666666667,-35.9974245952288"
-                    Point2="-133.666666666667,-35.9974245952288"
-                    Point3="-133.666666666667,-39.9974245952288" />
-                  <mssgle:LineSegment
-                    End="-133.666666666667,-53.1863057324841" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load employee_go_training.Paths[Merge Join Output1]"
-          TopLeft="982.5,116.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="50,0"
-              Start="0,0"
-              End="42.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="42.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
