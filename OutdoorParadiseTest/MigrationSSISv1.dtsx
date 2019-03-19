@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MigrationSSISv1"
   DTS:PackageType="5"
-  DTS:VersionBuild="86"
-  DTS:VersionGUID="{FF3B3882-A444-45B0-8D30-7788AAE560AE}">
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{669F3ADB-7A69-4992-84DF-88B021A0A5E8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4155,6 +4155,52 @@
                       cachedLength="6"
                       cachedName="EXTENSION"
                       lineageId="Package\Load initial data\GreatOutdoor2 Employees.Outputs[ADO NET Source Output].Columns[EXTENSION]" />
+                    <inputColumn
+                      refId="Package\Load initial data\Derived Column 2.Inputs[Derived Column Input].Columns[SALES_STAFF_CODE]"
+                      cachedDataType="i4"
+                      cachedName="SALES_STAFF_CODE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load initial data\GreatOutdoor2 Employees.Outputs[ADO NET Source Output].Columns[SALES_STAFF_CODE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Load initial data\GreatOutdoor2 Employees.Outputs[ADO NET Source Output].Columns[SALES_STAFF_CODE]} + 2000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SALES_STAFF_CODE + 2000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Derived Column 2.Inputs[Derived Column Input].Columns[MANAGER_CODE]"
+                      cachedDataType="i4"
+                      cachedName="MANAGER_CODE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load initial data\GreatOutdoor2 Employees.Outputs[ADO NET Source Output].Columns[MANAGER_CODE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Load initial data\GreatOutdoor2 Employees.Outputs[ADO NET Source Output].Columns[MANAGER_CODE]} + 2000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">MANAGER_CODE + 2000</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -8587,29 +8633,29 @@ Order By Company_name</property>
               startId="Package\Load initial data\Branch.Outputs[ADO NET Source Output]" />
             <path
               refId="Package\Load initial data.Paths[Data Conversion Output4]"
-              endId="Package\Load initial data\OP jobs.Inputs[ADO NET Destination Input]"
+              endId="Package\Load initial data\Union All.Inputs[Union All Input 4]"
               name="Data Conversion Output"
-              startId="Package\Load initial data\Data Conversion 1.Outputs[Data Conversion Output]" />
+              startId="Package\Load initial data\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Load initial data.Paths[Data Conversion Output3]"
-              endId="Package\Load initial data\Go_Training OP.Inputs[ADO NET Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Load initial data\Data Conversion 4.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Load initial data.Paths[Data Conversion Output1]"
-              endId="Package\Load initial data\Sales_Target OP.Inputs[ADO NET Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Load initial data\sales_target conversie.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Load initial data.Paths[Data Conversion Output]"
               endId="Package\Load initial data\Order_Details OP.Inputs[ADO NET Destination Input]"
               name="Data Conversion Output"
               startId="Package\Load initial data\Data Conversion 3.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Load initial data.Paths[Data Conversion Output2]"
-              endId="Package\Load initial data\Union All.Inputs[Union All Input 4]"
+              refId="Package\Load initial data.Paths[Data Conversion Output1]"
+              endId="Package\Load initial data\Go_Training OP.Inputs[ADO NET Destination Input]"
               name="Data Conversion Output"
-              startId="Package\Load initial data\Data Conversion.Outputs[Data Conversion Output]" />
+              startId="Package\Load initial data\Data Conversion 4.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load initial data.Paths[Data Conversion Output]"
+              endId="Package\Load initial data\OP jobs.Inputs[ADO NET Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load initial data\Data Conversion 1.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load initial data.Paths[Data Conversion Output2]"
+              endId="Package\Load initial data\Sales_Target OP.Inputs[ADO NET Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load initial data\sales_target conversie.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Load initial data.Paths[Derived Column Output]"
               endId="Package\Load initial data\Union All.Inputs[Union All Input 1]"
@@ -8657,6 +8703,24 @@ Order By Company_name</property>
               startId="Package\Load initial data\Conditional Split.Outputs[_region]" />
           </paths>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Script Task"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{4B10D0F2-B4EF-422D-81FE-0E42FDD80204}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Script Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_2372760dd4814502923174051749e3d3"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="CSharp" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -8724,6 +8788,10 @@ Order By Company_name</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Script Task"
+          TopLeft="105.5,85.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -8731,11 +8799,43 @@ Order By Company_name</property>
     design-time-name="Package\Load employee_go_training">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load employee_go_training\Merge Join 1"
+          TopLeft="528.5,203" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Load employee_go_training\Sort 2"
+          TopLeft="268,314.686305732484" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Load employee_go_training\Sort 1"
+          TopLeft="267.5,204" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Load employee_go_training\Sort"
+          TopLeft="548,79.5" />
         <NodeLayout
           Size="259,42"
           Id="Package\Load employee_go_training\splitten sales_staff in Fname + Lname"
           TopLeft="218.807692307692,79.884615384615" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Load employee_go_training\Sort 3"
+          TopLeft="698.5,208" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Load employee_go_training\Greatoutdoor1 Employees"
+          TopLeft="14,199.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load employee_go_training\Merge Join 2"
+          TopLeft="680.5,319" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Load employee_go_training\Employee_GO_Training OP"
+          TopLeft="898.5,314" />
         <NodeLayout
           Size="150,42"
           Id="Package\Load employee_go_training\OP Go_Traning"
@@ -8744,38 +8844,6 @@ Order By Company_name</property>
           Size="121,42"
           Id="Package\Load employee_go_training\Excel GO"
           TopLeft="53.326923076923,75.75" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Load employee_go_training\Sort 2"
-          TopLeft="268,314.686305732484" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Load employee_go_training\Merge Join 1"
-          TopLeft="528.5,203" />
-        <NodeLayout
-          Size="201,42"
-          Id="Package\Load employee_go_training\Greatoutdoor1 Employees"
-          TopLeft="14,199.5" />
-        <NodeLayout
-          Size="206,42"
-          Id="Package\Load employee_go_training\Employee_GO_Training OP"
-          TopLeft="898.5,314" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Load employee_go_training\Sort"
-          TopLeft="548,79.5" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Load employee_go_training\Sort 3"
-          TopLeft="698.5,208" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Load employee_go_training\Merge Join 2"
-          TopLeft="680.5,319" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Load employee_go_training\Sort 1"
-          TopLeft="267.5,204" />
         <EdgeLayout
           Id="Package\Load employee_go_training.Paths[Sort Output3]"
           TopLeft="375,337.843152866242">
@@ -8795,7 +8863,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8817,7 +8887,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8839,7 +8911,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8861,7 +8935,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8883,7 +8959,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8905,7 +8983,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8927,7 +9007,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8949,7 +9031,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8971,7 +9055,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8993,7 +9079,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9005,9 +9093,17 @@ Order By Company_name</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="128,42"
+          Id="Package\Load initial data\Region OP"
+          TopLeft="590,811" />
+        <NodeLayout
           Size="165,42"
           Id="Package\Load initial data\Data Conversion 4"
           TopLeft="279,11" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Load initial data\Promotion OP"
+          TopLeft="577,951" />
         <NodeLayout
           Size="133,42"
           Id="Package\Load initial data\GO Retailer"
@@ -9029,41 +9125,29 @@ Order By Company_name</property>
           Id="Package\Load initial data\Acces Jobs"
           TopLeft="34.615384615385,401.769230769231" />
         <NodeLayout
-          Size="143,42"
-          Id="Package\Load initial data\Order_Details"
-          TopLeft="32,1163" />
-        <NodeLayout
-          Size="128,42"
-          Id="Package\Load initial data\Region OP"
-          TopLeft="590,811" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Load initial data\Conditional Split"
-          TopLeft="297.5,816.5" />
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Load initial data\Promotion OP"
-          TopLeft="577,951" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Load initial data\Campaign"
-          TopLeft="35,1014" />
+          Size="184,42"
+          Id="Package\Load initial data\sales_target conversie"
+          TopLeft="284,1085" />
         <NodeLayout
           Size="127,42"
           Id="Package\Load initial data\Promotion"
           TopLeft="35,949" />
         <NodeLayout
+          Size="159,42"
+          Id="Package\Load initial data\GO Product_type"
+          TopLeft="36,687" />
+        <NodeLayout
           Size="165,42"
           Id="Package\Load initial data\Data Conversion 1"
           TopLeft="336,408" />
         <NodeLayout
-          Size="135,42"
-          Id="Package\Load initial data\Branch"
-          TopLeft="42,817" />
-        <NodeLayout
           Size="157,42"
           Id="Package\Load initial data\Excel GO Course"
           TopLeft="16.5,10" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Load initial data\Branch"
+          TopLeft="42,817" />
         <NodeLayout
           Size="160,42"
           Id="Package\Load initial data\Order_Details OP"
@@ -9072,10 +9156,6 @@ Order By Company_name</property>
           Size="158,42"
           Id="Package\Load initial data\Product_type OP"
           TopLeft="580,684" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Load initial data\GO Product_type"
-          TopLeft="36,687" />
         <NodeLayout
           Size="156,42"
           Id="Package\Load initial data\Data Conversion"
@@ -9089,13 +9169,17 @@ Order By Company_name</property>
           Id="Package\Load initial data\GO Product_line"
           TopLeft="36,624" />
         <NodeLayout
+          Size="163,42"
+          Id="Package\Load initial data\Derived Column 2"
+          TopLeft="325,250" />
+        <NodeLayout
           Size="124,42"
           Id="Package\Load initial data\Bonus OP"
           TopLeft="586,752" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Load initial data\Derived Column 2"
-          TopLeft="325,250" />
+          Size="155,42"
+          Id="Package\Load initial data\Conditional Split"
+          TopLeft="297.5,816.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\Load initial data\Product_line OP"
@@ -9109,13 +9193,21 @@ Order By Company_name</property>
           Id="Package\Load initial data\GreatOutdoor2 Employees"
           TopLeft="27.076923076923,254" />
         <NodeLayout
-          Size="184,42"
-          Id="Package\Load initial data\sales_target conversie"
-          TopLeft="284,1085" />
+          Size="141,42"
+          Id="Package\Load initial data\OP Employee"
+          TopLeft="764.57692307692,330.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Load initial data\GO Order_Header"
+          TopLeft="40,484" />
         <NodeLayout
           Size="165,42"
           Id="Package\Load initial data\GO Order_Method"
           TopLeft="35,887" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Load initial data\Order_Details"
+          TopLeft="32,1163" />
         <NodeLayout
           Size="143,42"
           Id="Package\Load initial data\Campaign OP"
@@ -9133,14 +9225,6 @@ Order By Company_name</property>
           Id="Package\Load initial data\AccesDB Bonus"
           TopLeft="41,752" />
         <NodeLayout
-          Size="141,42"
-          Id="Package\Load initial data\OP Employee"
-          TopLeft="764.57692307692,330.5" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Load initial data\GO Order_Header"
-          TopLeft="40,484" />
-        <NodeLayout
           Size="121,42"
           Id="Package\Load initial data\Union All"
           TopLeft="584,331" />
@@ -9152,6 +9236,10 @@ Order By Company_name</property>
           Size="161,47"
           Id="Package\Load initial data\OP jobs"
           TopLeft="602.884615384615,407.576923076923" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Load initial data\Campaign"
+          TopLeft="35,1014" />
         <NodeLayout
           Size="203,53"
           Id="Package\Load initial data\Acces Employees"
@@ -9358,50 +9446,6 @@ Order By Company_name</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load initial data.Paths[Data Conversion Output4]"
-          TopLeft="501,430.038461538461">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="101.884615384615,0"
-              Start="0,0"
-              End="94.384615384615,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="94.384615384615,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[Data Conversion Output3]"
-          TopLeft="444,29.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="115.25,0"
-              Start="0,0"
-              End="107.75,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="107.75,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load initial data.Paths[Data Conversion Output2]"
           TopLeft="641.75,294">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9423,7 +9467,29 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load initial data.Paths[Data Conversion Output1]"
+          Id="Package\Load initial data.Paths[Data Conversion Output3]"
+          TopLeft="455,1182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119,0"
+              Start="0,0"
+              End="111.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="111.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[Data Conversion Output2]"
           TopLeft="468,1108.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9445,19 +9511,41 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load initial data.Paths[Data Conversion Output]"
-          TopLeft="455,1182">
+          Id="Package\Load initial data.Paths[Data Conversion Output1]"
+          TopLeft="444,29.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="119,0"
+              EndConnector="115.25,0"
               Start="0,0"
-              End="111.5,0">
+              End="107.75,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="111.5,0" />
+                    End="107.75,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load initial data.Paths[Data Conversion Output]"
+          TopLeft="501,430.038461538461">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.884615384615,0"
+              Start="0,0"
+              End="94.384615384615,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="94.384615384615,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9736,6 +9824,22 @@ Order By Company_name</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Region OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Promotion OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load initial data\GO Retailer">
     <Properties>
       <Property>
@@ -9773,38 +9877,6 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Order_Details">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Region OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Promotion OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Campaign">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load initial data\Promotion">
     <Properties>
       <Property>
@@ -9813,7 +9885,7 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\Branch">
+    design-time-name="Package\Load initial data\GO Product_type">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9834,6 +9906,14 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Branch">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load initial data\Order_Details OP">
     <Properties>
       <Property>
@@ -9843,14 +9923,6 @@ Order By Company_name</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load initial data\Product_type OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\GO Product_type">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9898,7 +9970,31 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\OP Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\GO Order_Header">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load initial data\GO Order_Method">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Order_Details">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9943,23 +10039,15 @@ Order By Company_name</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\OP Employee">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load initial data\GO Order_Header">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load initial data\OP jobs">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load initial data\Campaign">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
