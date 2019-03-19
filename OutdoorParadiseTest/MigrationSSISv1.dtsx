@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MigrationSSISv1"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{E6E230F3-D00D-4111-BF3E-497A4E9AFD8D}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{D1AE335F-95EE-477C-8BE5-6570EA2D8DEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6542,70 +6542,70 @@ WHERE Region IS NOT NULL</property>
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\Sales_Staff.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output12]"
-              endId="Package\Data Flow Task\Product_line_OP.Inputs[ADO NET Destination Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Product_line.Outputs[ADO NET Source Output]" />
-            <path
               refId="Package\Data Flow Task.Paths[ADO NET Source Output13]"
-              endId="Package\Data Flow Task\Derived Column 2.Inputs[Derived Column Input]"
+              endId="Package\Data Flow Task\Retailer_OP.Inputs[ADO NET Destination Input]"
               name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Sales_Branch.Outputs[ADO NET Source Output]" />
+              startId="Package\Data Flow Task\Retailerr.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output10]"
-              endId="Package\Data Flow Task\Merge Join 1.Inputs[Merge Join Left Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Retailer_Site.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output9]"
-              endId="Package\Data Flow Task\Branch_OP.Inputs[ADO NET Destination Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Branch.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output8]"
-              endId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Product.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output7]"
-              endId="Package\Data Flow Task\Campaign_OP.Inputs[ADO NET Destination Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Campaign.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output11]"
-              endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Retailer.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output5]"
-              endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Order_Header.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output4]"
-              endId="Package\Data Flow Task\Order_Method_OP.Inputs[ADO NET Destination Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Order_Method.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output3]"
-              endId="Package\Data Flow Task\Promotion_OP.Inputs[ADO NET Destination Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Promotion.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output2]"
-              endId="Package\Data Flow Task\Product_type_OP.Inputs[ADO NET Destination Input]"
-              name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Product_type.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output1]"
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output12]"
               endId="Package\Data Flow Task\Merge Join 1.Inputs[Merge Join Right Input]"
               name="ADO NET Source Output"
               startId="Package\Data Flow Task\Regio___.Outputs[ADO NET Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[ADO NET Source Output6]"
-              endId="Package\Data Flow Task\Retailer_OP.Inputs[ADO NET Destination Input]"
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output10]"
+              endId="Package\Data Flow Task\Promotion_OP.Inputs[ADO NET Destination Input]"
               name="ADO NET Source Output"
-              startId="Package\Data Flow Task\Retailerr.Outputs[ADO NET Source Output]" />
+              startId="Package\Data Flow Task\Promotion.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output9]"
+              endId="Package\Data Flow Task\Order_Method_OP.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Order_Method.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output8]"
+              endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Order_Header.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output7]"
+              endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Retailer.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output11]"
+              endId="Package\Data Flow Task\Product_type_OP.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Product_type.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output5]"
+              endId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Product.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output4]"
+              endId="Package\Data Flow Task\Branch_OP.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Branch.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output3]"
+              endId="Package\Data Flow Task\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Retailer_Site.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output2]"
+              endId="Package\Data Flow Task\Derived Column 2.Inputs[Derived Column Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Sales_Branch.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output1]"
+              endId="Package\Data Flow Task\Product_line_OP.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Product_line.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output6]"
+              endId="Package\Data Flow Task\Campaign_OP.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Campaign.Outputs[ADO NET Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output]"
               endId="Package\Data Flow Task\Product_OP.Inputs[ADO NET Destination Input]"
@@ -6637,15 +6637,15 @@ WHERE Region IS NOT NULL</property>
               name="Merge Join Output"
               startId="Package\Data Flow Task\Merge Join 1.Outputs[Merge Join Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output]" />
-            <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
               endId="Package\Data Flow Task\Bonus_OP.Inputs[ADO NET Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\Bonus.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Acces Employees.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
               endId="Package\Data Flow Task\OP jobs.Inputs[ADO NET Destination Input]"
@@ -6681,22 +6681,6 @@ WHERE Region IS NOT NULL</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="126,42"
-          Id="Package\Data Flow Task\Campaign"
-          TopLeft="61,965.666666666667" />
-        <NodeLayout
-          Size="115,42"
-          Id="Package\Data Flow Task\Product"
-          TopLeft="73,485.333333333333" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Data Flow Task\Derived Column 1"
-          TopLeft="242,489.333333333333" />
-        <NodeLayout
-          Size="182,45"
-          Id="Package\Data Flow Task\Acces Jobs"
-          TopLeft="72.615384615385,210.102564102564" />
-        <NodeLayout
           Size="145,42"
           Id="Package\Data Flow Task\Order_Header"
           TopLeft="72,356.333333333333" />
@@ -6705,9 +6689,9 @@ WHERE Region IS NOT NULL</property>
           Id="Package\Data Flow Task\Order_Method_OP"
           TopLeft="450,835.666666666667" />
         <NodeLayout
-          Size="131,42"
-          Id="Package\Data Flow Task\Branch_OP"
-          TopLeft="461,769.333333333333" />
+          Size="182,45"
+          Id="Package\Data Flow Task\Acces Jobs"
+          TopLeft="72.615384615385,210.102564102564" />
         <NodeLayout
           Size="146,42"
           Id="Package\Data Flow Task\Promotion_OP"
@@ -6717,73 +6701,77 @@ WHERE Region IS NOT NULL</property>
           Id="Package\Data Flow Task\Product_OP"
           TopLeft="457,486.333333333333" />
         <NodeLayout
-          Size="127,42"
-          Id="Package\Data Flow Task\Promotion"
-          TopLeft="62,903.666666666666" />
-        <NodeLayout
-          Size="131,42"
-          Id="Package\Data Flow Task\Sales_Staff"
-          TopLeft="29.076923076923,96.333333333333" />
-        <NodeLayout
-          Size="112,42"
-          Id="Package\Data Flow Task\Branch"
-          TopLeft="69,765.333333333333" />
+          Size="163,42"
+          Id="Package\Data Flow Task\Derived Column 1"
+          TopLeft="242,489.333333333333" />
         <NodeLayout
           Size="161,47"
           Id="Package\Data Flow Task\OP jobs"
           TopLeft="462.884615384615,201.910256410256" />
         <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow Task\Product_type_OP"
+          TopLeft="464,625.333333333333" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Data Flow Task\Merge Join 1"
+          TopLeft="269,1213" />
+        <NodeLayout
           Size="147,42"
           Id="Package\Data Flow Task\Order_Method"
           TopLeft="65,835.666666666667" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Data Flow Task\Retailer_OP"
+          TopLeft="423,1104" />
         <NodeLayout
           Size="119,42"
           Id="Package\Data Flow Task\Retailerr"
           TopLeft="68,1108" />
         <NodeLayout
+          Size="112,42"
+          Id="Package\Data Flow Task\Branch"
+          TopLeft="69,765.333333333333" />
+        <NodeLayout
           Size="156,42"
           Id="Package\Data Flow Task\Product_line_OP"
           TopLeft="458,551.333333333333" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="263.094405594406,281.980186480186" />
         <NodeLayout
           Size="142,42"
           Id="Package\Data Flow Task\Sales_Branch"
           TopLeft="46,1037" />
         <NodeLayout
           Size="127,42"
+          Id="Package\Data Flow Task\Promotion"
+          TopLeft="62,903.666666666666" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Data Flow Task\Branch_OP"
+          TopLeft="461,769.333333333333" />
+        <NodeLayout
+          Size="127,42"
           Id="Package\Data Flow Task\Bonus_OP"
           TopLeft="462,698.333333333333" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Data Flow Task\Regio___"
-          TopLeft="64,1248" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Data Flow Task\Campaign_OP"
-          TopLeft="451,962.666666666667" />
-        <NodeLayout
-          Size="188,42"
-          Id="Package\Data Flow Task\ADO NET Destination 1"
-          TopLeft="455,1214" />
         <NodeLayout
           Size="137,42"
           Id="Package\Data Flow Task\Product_line"
           TopLeft="71,551.333333333333" />
         <NodeLayout
+          Size="145,42"
+          Id="Package\Data Flow Task\Campaign_OP"
+          TopLeft="451,962.666666666667" />
+        <NodeLayout
           Size="115,42"
           Id="Package\Data Flow Task\Retailer"
           TopLeft="74,423.333333333333" />
         <NodeLayout
-          Size="160,42"
-          Id="Package\Data Flow Task\Product_type_OP"
-          TopLeft="464,625.333333333333" />
-        <NodeLayout
-          Size="138,42"
-          Id="Package\Data Flow Task\Retailer_Site"
-          TopLeft="63,1186" />
-        <NodeLayout
-          Size="134,42"
-          Id="Package\Data Flow Task\Retailer_OP"
-          TopLeft="423,1104" />
+          Size="188,42"
+          Id="Package\Data Flow Task\ADO NET Destination 1"
+          TopLeft="455,1214" />
         <NodeLayout
           Size="165,42"
           Id="Package\Data Flow Task\Order_Header_OP"
@@ -6793,21 +6781,29 @@ WHERE Region IS NOT NULL</property>
           Id="Package\Data Flow Task\Merge Join"
           TopLeft="257,388.333333333333" />
         <NodeLayout
-          Size="108,42"
-          Id="Package\Data Flow Task\Bonus"
-          TopLeft="70,694.333333333333" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Data Flow Task\Merge Join 1"
-          TopLeft="269,1213" />
-        <NodeLayout
           Size="131,42"
-          Id="Package\Data Flow Task\Region_OP"
-          TopLeft="438,1036" />
+          Id="Package\Data Flow Task\Sales_Staff"
+          TopLeft="29.076923076923,96.333333333333" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Data Flow Task\Retailer_Site"
+          TopLeft="63,1186" />
         <NodeLayout
           Size="219,42"
           Id="Package\Data Flow Task\laadt GO employees sqlserver"
           TopLeft="221.5,97.602564102564" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Data Flow Task\Bonus"
+          TopLeft="70,694.333333333333" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Data Flow Task\Campaign"
+          TopLeft="61,965.666666666667" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Data Flow Task\Regio___"
+          TopLeft="64,1248" />
         <NodeLayout
           Size="141,42"
           Id="Package\Data Flow Task\Product_type"
@@ -6817,9 +6813,17 @@ WHERE Region IS NOT NULL</property>
           Id="Package\Data Flow Task\OP Employee2"
           TopLeft="486.653846153846,96.75641025641" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="263.094405594406,281.980186480186" />
+          Size="163,42"
+          Id="Package\Data Flow Task\Derived Column 2"
+          TopLeft="236,1034" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Data Flow Task\Product"
+          TopLeft="73,485.333333333333" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Data Flow Task\Region_OP"
+          TopLeft="438,1036" />
         <NodeLayout
           Size="159,42"
           Id="Package\Data Flow Task\Acces Employees"
@@ -6828,128 +6832,6 @@ WHERE Region IS NOT NULL</property>
           Size="179,42"
           Id="Package\Data Flow Task\ADO NET Destination"
           TopLeft="462.772727272727,284.553613053613" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output4]"
-          TopLeft="212,856.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="238,0"
-              Start="0,0"
-              End="230.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="230.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output3]"
-          TopLeft="189,923.666666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="261,0"
-              Start="0,0"
-              End="253.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="253.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output2]"
-          TopLeft="212,643.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="252,0"
-              Start="0,0"
-              End="244.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="244.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output1]"
-          TopLeft="187,1269">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="82,-29.3333333333333"
-              Start="0,0"
-              End="74.5,-29.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="43.3944954128441,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="43.3944954128441,0"
-                    Point2="47.3944954128441,0"
-                    Point3="47.3944954128441,-4" />
-                  <mssgle:LineSegment
-                    End="47.3944954128441,-25.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="47.3944954128441,-25.3333333333333"
-                    Point2="47.3944954128441,-29.3333333333333"
-                    Point3="51.3944954128441,-29.3333333333333" />
-                  <mssgle:LineSegment
-                    End="74.5,-29.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
-          TopLeft="160.076923076923,117.967948717949">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="61.423076923077,0"
-              Start="0,0"
-              End="53.923076923077,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="53.923076923077,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
           TopLeft="254.615384615385,229.00641025641">
@@ -7061,6 +6943,28 @@ WHERE Region IS NOT NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output3]"
+          TopLeft="399,1056">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39,0"
+              Start="0,0"
+              End="31.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="31.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output2]"
           TopLeft="417.094405594406,304.2668997669">
           <EdgeLayout.Curve>
@@ -7127,19 +7031,53 @@ WHERE Region IS NOT NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output12]"
-          TopLeft="208,572.333333333333">
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output13]"
+          TopLeft="187,1127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="250,0"
+              EndConnector="236,0"
               Start="0,0"
-              End="242.5,0">
+              End="228.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="242.5,0" />
+                    End="228.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output12]"
+          TopLeft="187,1269">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82,-29.3333333333333"
+              Start="0,0"
+              End="74.5,-29.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.3944954128441,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.3944954128441,0"
+                    Point2="47.3944954128441,0"
+                    Point3="47.3944954128441,-4" />
+                  <mssgle:LineSegment
+                    End="47.3944954128441,-25.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.3944954128441,-25.3333333333333"
+                    Point2="47.3944954128441,-29.3333333333333"
+                    Point3="51.3944954128441,-29.3333333333333" />
+                  <mssgle:LineSegment
+                    End="74.5,-29.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7150,6 +7088,106 @@ WHERE Region IS NOT NULL</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ADO NET Source Output11]"
+          TopLeft="212,643.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="252,0"
+              Start="0,0"
+              End="244.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="244.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output10]"
+          TopLeft="189,923.666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="261,0"
+              Start="0,0"
+              End="253.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="253.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output9]"
+          TopLeft="212,856.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="238,0"
+              Start="0,0"
+              End="230.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="230.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output8]"
+          TopLeft="217,377.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40,26.3333333333334"
+              Start="0,0"
+              End="32.5,26.3333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="19.1192660550458,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.1192660550458,0"
+                    Point2="23.1192660550458,0"
+                    Point3="23.1192660550458,4" />
+                  <mssgle:LineSegment
+                    End="23.1192660550458,22.3333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.1192660550458,22.3333333333334"
+                    Point2="23.1192660550458,26.3333333333334"
+                    Point3="27.1192660550458,26.3333333333334" />
+                  <mssgle:LineSegment
+                    End="32.5,26.3333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output7]"
           TopLeft="189,444.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7183,7 +7221,73 @@ WHERE Region IS NOT NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output10]"
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output6]"
+          TopLeft="187,985.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="264,0"
+              Start="0,0"
+              End="256.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="256.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output5]"
+          TopLeft="188,508.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54,0"
+              Start="0,0"
+              End="46.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output4]"
+          TopLeft="181,788.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="280,0"
+              Start="0,0"
+              End="272.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="272.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output3]"
           TopLeft="201,1207">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7217,133 +7321,7 @@ WHERE Region IS NOT NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output9]"
-          TopLeft="181,788.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="280,0"
-              Start="0,0"
-              End="272.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="272.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output8]"
-          TopLeft="188,508.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="54,0"
-              Start="0,0"
-              End="46.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="46.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output7]"
-          TopLeft="187,985.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="264,0"
-              Start="0,0"
-              End="256.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="256.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output6]"
-          TopLeft="187,1127">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="236,0"
-              Start="0,0"
-              End="228.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="228.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output5]"
-          TopLeft="217,377.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="40,26.3333333333334"
-              Start="0,0"
-              End="32.5,26.3333333333334">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="19.1192660550458,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="19.1192660550458,0"
-                    Point2="23.1192660550458,0"
-                    Point3="23.1192660550458,4" />
-                  <mssgle:LineSegment
-                    End="23.1192660550458,22.3333333333334" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.1192660550458,22.3333333333334"
-                    Point2="23.1192660550458,26.3333333333334"
-                    Point3="27.1192660550458,26.3333333333334" />
-                  <mssgle:LineSegment
-                    End="32.5,26.3333333333334" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Data Flow Task\Derived Column 2"
-          TopLeft="236,1034" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output13]"
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output2]"
           TopLeft="188,1056.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7365,19 +7343,41 @@ WHERE Region IS NOT NULL</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output3]"
-          TopLeft="399,1056">
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output1]"
+          TopLeft="208,572.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="39,0"
+              EndConnector="250,0"
               Start="0,0"
-              End="31.5,0">
+              End="242.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="31.5,0" />
+                    End="242.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
+          TopLeft="160.076923076923,117.967948717949">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.423076923077,0"
+              Start="0,0"
+              End="53.923076923077,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="53.923076923077,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7390,7 +7390,7 @@ WHERE Region IS NOT NULL</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Campaign">
+    design-time-name="Package\Data Flow Task\Order_Header">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7398,7 +7398,7 @@ WHERE Region IS NOT NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Product">
+    design-time-name="Package\Data Flow Task\Order_Method_OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7419,30 +7419,6 @@ WHERE Region IS NOT NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Order_Header">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Order_Method_OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Branch_OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Promotion_OP">
     <Properties>
       <Property>
@@ -7459,31 +7435,15 @@ WHERE Region IS NOT NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Promotion">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Sales_Staff">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Branch">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OP jobs">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Product_type_OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7499,7 +7459,23 @@ WHERE Region IS NOT NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Retailer_OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Retailerr">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Branch">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7523,7 +7499,7 @@ WHERE Region IS NOT NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Bonus_OP">
+    design-time-name="Package\Data Flow Task\Promotion">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7531,7 +7507,15 @@ WHERE Region IS NOT NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Campaign_OP">
+    design-time-name="Package\Data Flow Task\Branch_OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Bonus_OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7547,6 +7531,14 @@ WHERE Region IS NOT NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Campaign_OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Retailer">
     <Properties>
       <Property>
@@ -7555,23 +7547,15 @@ WHERE Region IS NOT NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Product_type_OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Retailer_OP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Order_Header_OP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Sales_Staff">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7592,7 +7576,7 @@ WHERE Region IS NOT NULL</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Region_OP">
+    design-time-name="Package\Data Flow Task\Campaign">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7609,6 +7593,22 @@ WHERE Region IS NOT NULL</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OP Employee2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Product">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Region_OP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
