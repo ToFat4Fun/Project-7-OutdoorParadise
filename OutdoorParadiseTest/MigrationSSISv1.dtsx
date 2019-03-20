@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MigrationSSISv1"
   DTS:PackageType="5"
-  DTS:VersionBuild="106"
-  DTS:VersionGUID="{6806AE59-39A0-4D4E-A18E-92F1C75AD20C}">
+  DTS:VersionBuild="108"
+  DTS:VersionGUID="{A23BC5F0-D712-401B-9D50-8B0C4E440D40}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4390,61 +4390,61 @@
                       cachedDataType="i4"
                       cachedName="emp_id"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[emp_id]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_id]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_id]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[manager_id]"
                       cachedDataType="i4"
                       cachedName="manager_id"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[manager_id]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[manager_id]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[manager_id]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[dept_id]"
                       cachedDataType="i4"
                       cachedName="dept_id"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[dept_id]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[dept_id]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[dept_id]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[job_id]"
                       cachedDataType="i4"
                       cachedName="job_id"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[job_id]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[job_id]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[job_id]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[start_date]"
                       cachedDataType="date"
                       cachedName="start_date"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[start_date]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[start_date]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[start_date]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[branch_code]"
                       cachedDataType="i4"
                       cachedName="branch_code"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[branch_code]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[branch_code]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[branch_code]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[bene_day_care]"
                       cachedDataType="bool"
                       cachedName="bene_day_care"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[bene_day_care]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_day_care]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_day_care]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[is_sales_staff]"
                       cachedDataType="bool"
                       cachedName="is_sales_staff"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[is_sales_staff]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[is_sales_staff]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[is_sales_staff]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[bene_life]"
                       cachedDataType="bool"
                       cachedName="bene_life"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[bene_health_ins]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_life]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_life]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[bene_health]"
                       cachedDataType="bool"
                       cachedName="bene_health"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[bene_life_ins]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_health]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_health]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[_emp_fname]"
                       cachedCodepage="1252"
@@ -4498,7 +4498,7 @@
                       cachedDataType="date"
                       cachedName="birth_date"
                       externalMetadataColumnId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].ExternalColumns[birth_date]"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[birth_date]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[birth_date]" />
                     <inputColumn
                       refId="Package\Load initial data\Employee OP.Inputs[OLE DB Destination Input].Columns[_gender]"
                       cachedCodepage="1252"
@@ -6025,6 +6025,626 @@ Order By Company_name</property>
                       lineageId="Package\Load initial data\Go_Training OP.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load initial data\Join Employee attributes"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Join Employee attributes"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1]"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[emp_id]"
+                      cachedDataType="i4"
+                      cachedName="emp_id"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[emp_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[manager_id]"
+                      cachedDataType="i4"
+                      cachedName="manager_id"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[manager_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[manager_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[emp_fname]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="emp_fname"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[emp_fname]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_fname]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[emp_lname]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="emp_lname"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[emp_lname]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_lname]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[dept_id]"
+                      cachedDataType="i4"
+                      cachedName="dept_id"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[dept_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[dept_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[street]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="street"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[street]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[street]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[city]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="city"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[city]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[city]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[state]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="state"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[state]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[state]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[phone]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="phone"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[phone]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[phone]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[ss_number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ss_number"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[ss_number]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[ss_number]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[job_id]"
+                      cachedDataType="i4"
+                      cachedName="job_id"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[job_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[job_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[start_date]"
+                      cachedDataType="date"
+                      cachedName="start_date"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[start_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[start_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[termination_date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="termination_date"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[termination_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[termination_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[birth_date]"
+                      cachedDataType="date"
+                      cachedName="birth_date"
+                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[birth_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[birth_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[_status]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="_status"
+                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[_status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[_ZipCode]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="_ZipCode"
+                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[_ZipCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_ZipCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[_gender]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="_gender"
+                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[_gender]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[gender]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[BeneBeneLife]"
+                      cachedDataType="bool"
+                      cachedName="BeneBeneLife"
+                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[BeneBeneLife]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_life]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[BeneHealth]"
+                      cachedDataType="bool"
+                      cachedName="BeneHealth"
+                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[BeneHealth]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_health]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[BeneDayCare]"
+                      cachedDataType="bool"
+                      cachedName="BeneDayCare"
+                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[BeneDayCare]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_day_care]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1].Columns[is_sales_staff]"
+                      cachedDataType="bool"
+                      cachedName="is_sales_staff"
+                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[is_sales_staff]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[is_sales_staff]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[EMAIL]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EMAIL"
+                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[EMAIL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[EMAIL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[_extension]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="_extension"
+                      lineageId="Package\Load initial data\Derived Column Types.Outputs[Derived Column Output].Columns[_extension]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_extension]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[is_sales_staff]"
+                      cachedDataType="bool"
+                      cachedName="is_sales_staff"
+                      lineageId="Package\Load initial data\Derived Column Types.Outputs[Derived Column Output].Columns[is_sales_staff]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[is_sales_staff]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[SALES_BRANCH_CODE]"
+                      cachedDataType="i4"
+                      cachedName="SALES_BRANCH_CODE"
+                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[SALES_BRANCH_CODE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[branch_code]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[_fax]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="_fax"
+                      lineageId="Package\Load initial data\Derived Column Types.Outputs[Derived Column Output].Columns[_fax]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[fax]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[SALES_STAFF_CODE]"
+                      cachedDataType="i4"
+                      cachedName="SALES_STAFF_CODE"
+                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[SALES_STAFF_CODE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[MANAGER_CODE]"
+                      cachedDataType="i4"
+                      cachedName="MANAGER_CODE"
+                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[MANAGER_CODE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[manager_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[FIRST_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="FIRST_NAME"
+                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[FIRST_NAME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_fname]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[LAST_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="LAST_NAME"
+                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[LAST_NAME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_lname]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[_DateHired]"
+                      cachedDataType="date"
+                      cachedName="_DateHired"
+                      lineageId="Package\Load initial data\Convertion Date_Hired.Outputs[Data Conversion Output].Columns[_DateHired]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[start_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2].Columns[WORK_PHONE]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="WORK_PHONE"
+                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[WORK_PHONE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[work_phone]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_id]"
+                      dataType="i4"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_id]"
+                      name="emp_id" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[manager_id]"
+                      dataType="i4"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[manager_id]"
+                      name="manager_id" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_fname]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_fname]"
+                      name="emp_fname" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_lname]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_lname]"
+                      name="emp_lname" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[dept_id]"
+                      dataType="i4"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[dept_id]"
+                      name="dept_id" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[street]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[street]"
+                      name="street" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[city]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[city]"
+                      name="city" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[state]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[state]"
+                      name="state" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[phone]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[phone]"
+                      name="phone" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[ss_number]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[ss_number]"
+                      name="ss_number" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[job_id]"
+                      dataType="i4"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[job_id]"
+                      name="job_id" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[start_date]"
+                      dataType="date"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[start_date]"
+                      name="start_date" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[termination_date]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[termination_date]"
+                      name="termination_date" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[birth_date]"
+                      dataType="date"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[birth_date]"
+                      name="birth_date" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[work_phone]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[work_phone]"
+                      name="work_phone" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[branch_code]"
+                      dataType="i4"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[branch_code]"
+                      name="branch_code" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[EMAIL]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[EMAIL]"
+                      name="EMAIL" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_status]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_status]"
+                      name="_status" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_ZipCode]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_ZipCode]"
+                      name="_ZipCode" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[gender]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[fax]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[fax]"
+                      name="fax" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_extension]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_extension]"
+                      name="_extension" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_life]"
+                      dataType="bool"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_life]"
+                      name="bene_life" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_health]"
+                      dataType="bool"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_health]"
+                      name="bene_health" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_day_care]"
+                      dataType="bool"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[bene_day_care]"
+                      name="bene_day_care" />
+                    <outputColumn
+                      refId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[is_sales_staff]"
+                      dataType="bool"
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[is_sales_staff]"
+                      name="is_sales_staff" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -8037,91 +8657,91 @@ Order By Company_name</property>
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="emp_fname"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_fname]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_fname]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[emp_lname]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="emp_lname"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_lname]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_lname]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[street]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="street"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[street]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[street]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[city]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="city"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[city]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[city]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[state]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="state"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[state]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[state]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[termination_date]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="termination_date"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[termination_date]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[termination_date]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[work_phone]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="work_phone"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[work_phone]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[work_phone]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[EMAIL]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="EMAIL"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[EMAIL]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[EMAIL]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[_status]"
                       cachedDataType="wstr"
                       cachedLength="1"
                       cachedName="_status"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_status]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_status]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[_ZipCode]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="_ZipCode"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_ZipCode]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_ZipCode]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[gender]"
                       cachedDataType="wstr"
                       cachedLength="1"
                       cachedName="gender"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[gender]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[gender]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[fax]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="fax"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[fax]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[fax]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[_extension]"
                       cachedDataType="wstr"
                       cachedLength="6"
                       cachedName="_extension"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_extension]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_extension]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[phone]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="phone"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[phone]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[phone]" />
                     <inputColumn
                       refId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input].Columns[ss_number]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="ss_number"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[ss_number]" />
+                      lineageId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[ss_number]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -8148,7 +8768,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_fname]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_fname]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8170,7 +8790,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_lname]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[emp_lname]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8192,7 +8812,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[street]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[street]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8214,7 +8834,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[city]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[city]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8236,7 +8856,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[state]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[state]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8258,7 +8878,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[termination_date]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[termination_date]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8280,7 +8900,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[work_phone]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[work_phone]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8302,7 +8922,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[EMAIL]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[EMAIL]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8324,7 +8944,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_status]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_status]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8346,7 +8966,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_ZipCode]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_ZipCode]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8368,7 +8988,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[gender]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[gender]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8390,7 +9010,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[fax]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[fax]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8412,7 +9032,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_extension]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[_extension]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8434,7 +9054,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[phone]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[phone]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8456,7 +9076,7 @@ Order By Company_name</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[ss_number]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1].Columns[ss_number]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -8485,626 +9105,6 @@ Order By Company_name</property>
                       lineageId="Package\Load initial data\Uniciode to String Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Load initial data\Union All 1"
-              componentClassID="Microsoft.UnionAll"
-              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-              name="Union All 1"
-              version="1">
-              <inputs>
-                <input
-                  refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1]"
-                  hasSideEffects="true"
-                  name="Union All Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[emp_id]"
-                      cachedDataType="i4"
-                      cachedName="emp_id"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[emp_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[manager_id]"
-                      cachedDataType="i4"
-                      cachedName="manager_id"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[manager_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[manager_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[emp_fname]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="emp_fname"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[emp_fname]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_fname]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[emp_lname]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="emp_lname"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[emp_lname]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_lname]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[dept_id]"
-                      cachedDataType="i4"
-                      cachedName="dept_id"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[dept_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[dept_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[street]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="street"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[street]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[street]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[city]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="city"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[city]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[city]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[state]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="state"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[state]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[state]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[phone]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="phone"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[phone]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[phone]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[ss_number]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="ss_number"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[ss_number]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[ss_number]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[job_id]"
-                      cachedDataType="i4"
-                      cachedName="job_id"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[job_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[job_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[start_date]"
-                      cachedDataType="date"
-                      cachedName="start_date"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[start_date]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[start_date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[termination_date]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="termination_date"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[termination_date]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[termination_date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[birth_date]"
-                      cachedDataType="date"
-                      cachedName="birth_date"
-                      lineageId="Package\Load initial data\Acces Employeets.Outputs[OLE DB Source Output].Columns[birth_date]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[birth_date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[_status]"
-                      cachedDataType="wstr"
-                      cachedLength="1"
-                      cachedName="_status"
-                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[_status]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_status]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[_ZipCode]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="_ZipCode"
-                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[_ZipCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_ZipCode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[_gender]"
-                      cachedDataType="wstr"
-                      cachedLength="1"
-                      cachedName="_gender"
-                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[_gender]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[gender]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[BeneBeneLife]"
-                      cachedDataType="bool"
-                      cachedName="BeneBeneLife"
-                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[BeneBeneLife]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_life]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[BeneHealth]"
-                      cachedDataType="bool"
-                      cachedName="BeneHealth"
-                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[BeneHealth]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_health]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[BeneDayCare]"
-                      cachedDataType="bool"
-                      cachedName="BeneDayCare"
-                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[BeneDayCare]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_day_care]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 1].Columns[is_sales_staff]"
-                      cachedDataType="bool"
-                      cachedName="is_sales_staff"
-                      lineageId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output].Columns[is_sales_staff]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[is_sales_staff]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2]"
-                  hasSideEffects="true"
-                  name="Union All Input 2">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[EMAIL]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="EMAIL"
-                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[EMAIL]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[EMAIL]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[_extension]"
-                      cachedDataType="wstr"
-                      cachedLength="6"
-                      cachedName="_extension"
-                      lineageId="Package\Load initial data\Derived Column Types.Outputs[Derived Column Output].Columns[_extension]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_extension]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[is_sales_staff]"
-                      cachedDataType="bool"
-                      cachedName="is_sales_staff"
-                      lineageId="Package\Load initial data\Derived Column Types.Outputs[Derived Column Output].Columns[is_sales_staff]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[is_sales_staff]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[SALES_BRANCH_CODE]"
-                      cachedDataType="i4"
-                      cachedName="SALES_BRANCH_CODE"
-                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[SALES_BRANCH_CODE]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[branch_code]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[_fax]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="_fax"
-                      lineageId="Package\Load initial data\Derived Column Types.Outputs[Derived Column Output].Columns[_fax]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[fax]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[SALES_STAFF_CODE]"
-                      cachedDataType="i4"
-                      cachedName="SALES_STAFF_CODE"
-                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[SALES_STAFF_CODE]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[MANAGER_CODE]"
-                      cachedDataType="i4"
-                      cachedName="MANAGER_CODE"
-                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[MANAGER_CODE]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[manager_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[FIRST_NAME]"
-                      cachedDataType="wstr"
-                      cachedLength="25"
-                      cachedName="FIRST_NAME"
-                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[FIRST_NAME]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_fname]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[LAST_NAME]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="LAST_NAME"
-                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[LAST_NAME]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_lname]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[_DateHired]"
-                      cachedDataType="date"
-                      cachedName="_DateHired"
-                      lineageId="Package\Load initial data\Convertion Date_Hired.Outputs[Data Conversion Output].Columns[_DateHired]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[start_date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load initial data\Union All 1.Inputs[Union All Input 2].Columns[WORK_PHONE]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="WORK_PHONE"
-                      lineageId="Package\Load initial data\GO2 Employees.Outputs[OLE DB Source Output].Columns[WORK_PHONE]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[work_phone]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Load initial data\Union All 1.Inputs[Union All Input 3]"
-                  dangling="true"
-                  hasSideEffects="true"
-                  name="Union All Input 3">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1]"
-                  name="Union All Output 1">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_id]"
-                      dataType="i4"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_id]"
-                      name="emp_id" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[manager_id]"
-                      dataType="i4"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[manager_id]"
-                      name="manager_id" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_fname]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_fname]"
-                      name="emp_fname" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_lname]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[emp_lname]"
-                      name="emp_lname" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[dept_id]"
-                      dataType="i4"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[dept_id]"
-                      name="dept_id" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[street]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[street]"
-                      name="street" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[city]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[city]"
-                      name="city" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[state]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[state]"
-                      name="state" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[phone]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[phone]"
-                      name="phone" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[ss_number]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[ss_number]"
-                      name="ss_number" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[job_id]"
-                      dataType="i4"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[job_id]"
-                      name="job_id" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[start_date]"
-                      dataType="date"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[start_date]"
-                      name="start_date" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[termination_date]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[termination_date]"
-                      name="termination_date" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[birth_date]"
-                      dataType="date"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[birth_date]"
-                      name="birth_date" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[work_phone]"
-                      dataType="wstr"
-                      length="20"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[work_phone]"
-                      name="work_phone" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[branch_code]"
-                      dataType="i4"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[branch_code]"
-                      name="branch_code" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[EMAIL]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[EMAIL]"
-                      name="EMAIL" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_status]"
-                      dataType="wstr"
-                      length="1"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_status]"
-                      name="_status" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_ZipCode]"
-                      dataType="wstr"
-                      length="30"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_ZipCode]"
-                      name="_ZipCode" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[gender]"
-                      dataType="wstr"
-                      length="1"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[gender]"
-                      name="gender" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[fax]"
-                      dataType="wstr"
-                      length="20"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[fax]"
-                      name="fax" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_extension]"
-                      dataType="wstr"
-                      length="6"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[_extension]"
-                      name="_extension" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_life]"
-                      dataType="bool"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_life]"
-                      name="bene_life" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_health]"
-                      dataType="bool"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_health]"
-                      name="bene_health" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_day_care]"
-                      dataType="bool"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[bene_day_care]"
-                      name="bene_day_care" />
-                    <outputColumn
-                      refId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[is_sales_staff]"
-                      dataType="bool"
-                      lineageId="Package\Load initial data\Union All 1.Outputs[Union All Output 1].Columns[is_sales_staff]"
-                      name="is_sales_staff" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -9164,7 +9164,7 @@ Order By Company_name</property>
               startId="Package\Load initial data\Branch.Outputs[ADO NET Source Output]" />
             <path
               refId="Package\Load initial data.Paths[Data Conversion Output4]"
-              endId="Package\Load initial data\Union All 1.Inputs[Union All Input 2]"
+              endId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 2]"
               name="Data Conversion Output"
               startId="Package\Load initial data\Convertion Date_Hired.Outputs[Data Conversion Output]" />
             <path
@@ -9199,7 +9199,7 @@ Order By Company_name</property>
               startId="Package\Load initial data\Derived Column Types.Outputs[Derived Column Output]" />
             <path
               refId="Package\Load initial data.Paths[Derived Column Output1]"
-              endId="Package\Load initial data\Union All 1.Inputs[Union All Input 1]"
+              endId="Package\Load initial data\Join Employee attributes.Inputs[Union All Input 1]"
               name="Derived Column Output"
               startId="Package\Load initial data\Derived Column types2.Outputs[Derived Column Output]" />
             <path
@@ -9236,7 +9236,7 @@ Order By Company_name</property>
               refId="Package\Load initial data.Paths[Union All Output 1]"
               endId="Package\Load initial data\Uniciode to String Conversion.Inputs[Data Conversion Input]"
               name="Union All Output 1"
-              startId="Package\Load initial data\Union All 1.Outputs[Union All Output 1]" />
+              startId="Package\Load initial data\Join Employee attributes.Outputs[Union All Output 1]" />
             <path
               refId="Package\Load initial data.Paths[_region]"
               endId="Package\Load initial data\Region OP.Inputs[ADO NET Destination Input]"
@@ -9306,7 +9306,7 @@ Order By Company_name</property>
     design-time-name="Package\Load employee_go_training">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="139,42"
           Id="Package\Load employee_go_training\Merge Join 1"
@@ -9370,7 +9370,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9392,7 +9394,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9414,7 +9418,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9436,7 +9442,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9458,7 +9466,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9480,7 +9490,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9502,7 +9514,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9524,7 +9538,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9546,7 +9562,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9568,7 +9586,9 @@ Order By Company_name</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9590,7 +9610,7 @@ Order By Company_name</property>
         <NodeLayout
           Size="165,42"
           Id="Package\Load initial data\Data Conversion 4"
-          TopLeft="279,11" />
+          TopLeft="326,11" />
         <NodeLayout
           Size="157,42"
           Id="Package\Load initial data\Sales_Target OP"
@@ -9626,7 +9646,7 @@ Order By Company_name</property>
         <NodeLayout
           Size="157,42"
           Id="Package\Load initial data\Excel GO Course"
-          TopLeft="16.5,10" />
+          TopLeft="28.5,13" />
         <NodeLayout
           Size="160,42"
           Id="Package\Load initial data\Order_Details OP"
@@ -9678,7 +9698,7 @@ Order By Company_name</property>
         <NodeLayout
           Size="153,42"
           Id="Package\Load initial data\Go_Training OP"
-          TopLeft="559.25,6.5" />
+          TopLeft="597.25,7.5" />
         <NodeLayout
           Size="163,42"
           Id="Package\Load initial data\GO Order_Header"
@@ -9803,18 +9823,18 @@ Order By Company_name</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load initial data.Paths[Excel Source Output]"
-          TopLeft="173.5,31.5">
+          TopLeft="185.5,33">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="105.5,0"
+              EndConnector="140.5,0"
               Start="0,0"
-              End="98,0">
+              End="133,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="98,0" />
+                    End="133,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9891,18 +9911,18 @@ Order By Company_name</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load initial data.Paths[Data Conversion Output]"
-          TopLeft="444,29.75">
+          TopLeft="491,30.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="115.25,0"
+              EndConnector="106.25,0"
               Start="0,0"
-              End="107.75,0">
+              End="98.75,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="107.75,0" />
+                    End="98.75,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10162,7 +10182,7 @@ Order By Company_name</property>
         <NodeLayout
           Size="141,42"
           Id="Package\Load initial data\Employee OP"
-          TopLeft="839,94" />
+          TopLeft="868,94" />
         <NodeLayout
           Size="185,42"
           Id="Package\Load initial data\Derived Column Types"
@@ -10192,21 +10212,21 @@ Order By Company_name</property>
         <NodeLayout
           Size="186,42"
           Id="Package\Load initial data\Convertion Date_Hired"
-          TopLeft="590.5,94" />
+          TopLeft="592.5,94" />
         <EdgeLayout
           Id="Package\Load initial data.Paths[Derived Column Output]"
           TopLeft="507,116">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="83.5,0"
+              EndConnector="85.5,0"
               Start="0,0"
-              End="76,0">
+              End="78,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="76,0" />
+                    End="78,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10218,7 +10238,7 @@ Order By Company_name</property>
         <NodeLayout
           Size="188,42"
           Id="Package\Load initial data\Derived Column types2"
-          TopLeft="331.517482517483,169.377622377622" />
+          TopLeft="326.517482517483,169.377622377622" />
         <NodeLayout
           Size="163,42"
           Id="Package\Load initial data\Acces Employeets"
@@ -10229,14 +10249,14 @@ Order By Company_name</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="140.517482517483,0"
+              EndConnector="135.517482517483,0"
               Start="0,0"
-              End="133.017482517483,0">
+              End="128.017482517483,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="133.017482517483,0" />
+                    End="128.017482517483,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10246,23 +10266,23 @@ Order By Company_name</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="121,42"
-          Id="Package\Load initial data\Union All 1"
-          TopLeft="627.5,171" />
+          Size="195,42"
+          Id="Package\Load initial data\Join Employee attributes"
+          TopLeft="590.5,164" />
         <EdgeLayout
           Id="Package\Load initial data.Paths[Derived Column Output1]"
-          TopLeft="519.517482517483,191.188811188811">
+          TopLeft="514.517482517483,187.688811188811">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="107.982517482517,0"
+              EndConnector="75.982517482517,0"
               Start="0,0"
-              End="100.482517482517,0">
+              End="68.482517482517,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="100.482517482517,0" />
+                    End="68.482517482517,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10273,18 +10293,18 @@ Order By Company_name</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load initial data.Paths[Data Conversion Output4]"
-          TopLeft="685.75,136">
+          TopLeft="686.75,136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35"
+              EndConnector="0,28"
               Start="0,0"
-              End="0,27.5">
+              End="0,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5" />
+                    End="0,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10296,27 +10316,27 @@ Order By Company_name</property>
         <NodeLayout
           Size="218,42"
           Id="Package\Load initial data\Uniciode to String Conversion"
-          TopLeft="761.5,222.5" />
+          TopLeft="801.5,218.5" />
         <EdgeLayout
           Id="Package\Load initial data.Paths[Union All Output 1]"
-          TopLeft="748.5,192">
+          TopLeft="785.5,185">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87,30.5"
+              EndConnector="90,33.5"
               Start="0,0"
-              End="87,23">
+              End="90,26">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="83,0" />
+                    End="86,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="83,0"
-                    Point2="87,0"
-                    Point3="87,4" />
+                    Point1="86,0"
+                    Point2="90,0"
+                    Point3="90,4" />
                   <mssgle:LineSegment
-                    End="87,23" />
+                    End="90,26" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10327,18 +10347,18 @@ Order By Company_name</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load initial data.Paths[Data Conversion Output5]"
-          TopLeft="907.5,222.5">
+          TopLeft="942,218.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-86.5"
+              EndConnector="0,-82.5"
               Start="0,0"
-              End="0,-79">
+              End="0,-75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-79" />
+                    End="0,-75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
