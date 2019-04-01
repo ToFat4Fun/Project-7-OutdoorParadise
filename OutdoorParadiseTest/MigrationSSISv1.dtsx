@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MigrationSSISv1"
   DTS:PackageType="5"
-  DTS:VersionBuild="202"
-  DTS:VersionGUID="{7985F6EB-1032-447E-A211-734CF45BAA40}">
+  DTS:VersionBuild="203"
+  DTS:VersionGUID="{98477E07-C4CE-47FC-BFC8-FF8EF8FED51F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
